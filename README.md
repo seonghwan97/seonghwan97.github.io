@@ -1,3 +1,9 @@
+<style>
+  .user-id {
+    display: none;
+  }
+</style>
+<div class="user-id">seonghwan97</div>
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
 
   <!-- Banner -->
