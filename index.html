@@ -2,249 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Seonghwan Lim - Portfolio</title>
+  <title>Seonghwan Lim – Portfolio</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; line-height:1.6; }
+    h1,h2 { margin:10px 0; }
+    a   { text-decoration:none; color:#666; }
+    .date { flex:0 0 110px; font-weight:bold; color:#666; }
+    .flex-col { display:flex; flex-direction:column; gap:20px; }
+    .flex-row { display:flex; align-items:flex-start; gap:20px; }
+  </style>
 </head>
-<body style="margin:0; padding:0; font-family: Arial, sans-serif;">
+<body>
 
-  <!-- Banner -->
-  <div style="width: 100%; background-color: #f9f9f9; padding: 20px;">
-    <h1 style="margin: 10px 0;">Seonghwan Lim</h1>
-    <p style="color: #666; margin-top: 0px; margin-bottom: 0;">
-      <a href="https://www.iit.edu/computer-science"
-         target="_blank"
-         style="text-decoration: none; color: #666;">
-         Computer Science, 
-      </a>
-      <a href="https://www.iit.edu/"
-         target="_blank"
-         style="text-decoration: none; color: #666;">
-         Illinois Institute of Technology
-      </a>
+<!-- Banner -->
+<div style="background:#f9f9f9; padding:20px;">
+  <h1>Seonghwan Lim</h1>
+  <p>
+    <a href="https://www.iit.edu/computer-science" target="_blank">Computer Science,</a>
+    <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a>
+  </p>
+</div>
+
+<!-- Main Container -->
+<div style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
+
+  <!-- Main Content -->
+  <div style="flex:2; max-width:820px;">
+
+    <!-- Intro -->
+    <p>
+      <strong>Hi everyone!</strong> I’m an M.S. candidate specializing in
+      <strong>computer vision &amp; machine learning</strong>.
+      I build robust visual models (PyTorch / TensorFlow / OpenCV) that solve real-world
+      problems in logistics, bioengineering, and human–computer interaction.
     </p>
-  </div>
+    <p>
+      My recent work includes <strong>object detection</strong> with YOLOv5 + Transformers
+      (+7.5&nbsp;pp accuracy), <strong>real-time microfluidic mixing control</strong> via imaging,
+      and <strong>MRI-guided cranial-implant monitoring</strong>.
+      I also explore <strong>multi-view 3D pose estimation</strong> and transformer-based
+      energy-expenditure prediction for XR safety training, plus
+      <strong>drone 3D surface scanning</strong> for aircraft inspection.
+    </p>
 
-  <!-- Main Container -->
-  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px; padding: 20px;">
+    <!-- Research Experience -->
+    <h2>Research Experience</h2>
+    <div class="flex-col">
 
-    <!-- Main Content -->
-    <div style="flex: 2; max-width: 800px; line-height: 1.6;">
-      <p>
-        <strong>Hi everyone!</strong> I’m a master’s student in Computer Science with a <strong>deep passion for computer vision and machine learning</strong>. I love designing and fine-tuning neural network architectures, implementing advanced algorithms, and applying feature extraction techniques to solve practical challenges. My core interest is leveraging computer vision across diverse fields—logistics, bioengineering, human performance analysis, or aviation—to create high-impact solutions that genuinely make a difference.
-      </p>
-      <p>
-        In the logistics sector, I created an <strong>object detection</strong> program that leverages complex neural network architectures to precisely identify which items are being stored</strong>, enabling more efficient inventory management. In one bioengineering lab, I focus on <strong>real-time microfluid mixing detection</strong> and control to ensure optimal flow conditions. Meanwhile, in the other group, I’m a research co-pilot exploring <strong>CT and MRI imaging for organ segmentation</strong>.
-      </p>
-      <p>
-        My interests also extend to analyzing <strong>3D human pose</strong> data to evaluate performance and energy usage—insights that could transform how we train athletes, improve workplace ergonomics, and more. Additionally, I’m engaged in a <strong>drone-based 3D scanning</strong> project for aircraft structural inspections, where automated and accurate defect detection can save time, cost, and potentially lives.
-      </p>
-      <p>
-        Combining my curiosity for interdisciplinary research with expertise in frameworks like PyTorch and TensorFlow, I aim to develop robust, scalable computer vision applications that bridge the gap between cutting-edge research and real-world deployment. I’m always excited to connect with fellow innovators, and I look forward to collaborating on projects that push the boundaries of AI and transform how we interact with technology.
-      </p>
-
-      <h2>Projects</h2>
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-
-        <!-- Project 8: Drone Mounted with 3D Surface Scanner for Aircraft Structural Inspections -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Feb 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Drone Mounted with 3D Surface Scanner for Aircraft Structural Inspections</strong></div>
-            <div>- Participating in the Drone Mounted with 3D Surface Scanner project, integrating a 3D scanner onto a drone to enhance aircraft inspection accuracy, accessibility, safety, and maintenance efficiency.</div>
-            <div>- Utilizing computer vision to detect aircraft anomalies and achieving seamless integration across drone development and operational processes.</div>
-          </div>
-        </div>        
-
-        <!-- Project 7: Human Activity Inference in Mixed Reality -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Human Activity Inference in Mixed Reality</strong></div>
-            <div>- Integrated five camera feeds using Python-based algorithms and MediaPipe’s Pose Landmark detection to achieve robust 3D pose estimation, leveraging comprehensive data analysis and literature reviews for improved accuracy in mixed reality environments.</div>
-            <div>- Collaborated in weekly Friday lab meetings with four team members and three professors, refining solutions by combining 3D pose data with EEG, heart rate, and motion signals to enhance energy and performance predictions, ultimately creating more immersive user experiences.</div>
-          </div>
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div>
+          <strong>Multi-view 3D Pose &amp; Energy Prediction</strong><br>
+          – Five-camera pipeline with AlphaPose &amp; MotionBERT for XR safety-training.<br>
+          – Extending to transformer models for multimodal energy-expenditure estimation.
         </div>
-
-        <!-- Project 6: Dynamic MRI and CT Segmentation -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Dynamic MRI and CT Segmentation</strong></div>
-            <div>- Conducting in-depth research on computer vision algorithms to precisely segment brain-implanted devices.</div>
-            <div>- Leveraged ITK-SNAP for medical image visualization and annotation, enabling detailed volumetric assessments, improved workflow efficiencies, and streamlined data manipulation.</div>
-            <div>- Present progress weekly in lab meetings alongside one professor, five senior researchers, and four co-pilots. These sessions focus on refining segmentation techniques, discussing challenges, and optimizing methodologies to achieve high-quality medical imaging outcomes.</div>
-          </div>
-        </div>
-
-        <!-- Project 5: Microfluid Control System -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Microfluid Control System</strong></div>
-            <div>- Analyzing real-time microfluidic videos to assess mixing efficiency, enabling precise droplet control for improved flow conditions.</div>
-            <div>- Generating microfluid simulations in MATLAB to model different flow scenarios, refine droplet behavior, and optimize mixing strategies.</div>
-            <div>- Presenting progress every two weeks to a supervising professor, discussing ongoing results, potential challenges, and future research directions.</div>
-          </div>
-        </div>
-
-        <!-- Project 4: NICE with Knowledge Distillation -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Oct – Nov 2024</div>
-          <div style="flex: 1;">
-            <div>
-              <strong>
-                <a href="https://github.com/seonghwan97/NICE-with-KD.git" target="_blank" style="text-decoration: none;">
-                  NICE with Knowledge Distillation
-                </a>
-              </strong>
-            </div>
-            <div>- Enhanced class-incremental learning by integrating Knowledge Distillation (KD), boosting accuracy from 39% to 49% on CIFAR-10 and from 44% to 59% on MNIST.</div>
-            <div>- Mitigated catastrophic forgetting through teacher-student learning approaches and dynamic neuron management strategies.</div>
-          </div>
-        </div>
-
-        <!-- Project 3: Data Structures Performance Analysis -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Oct – Nov 2024</div>
-          <div style="flex: 1;">
-            <div>
-              <strong>
-                <a href="https://github.com/seonghwan97/Data-Structure-Performance-Analysis.git" 
-                  target="_blank" 
-                  style="text-decoration: none;">
-                  Data Structures Performance Analysis
-                </a>
-              </strong>
-            </div>
-            <div>- Implemented and analyzed key data structures (arrays, linked lists, binary search trees).</div>
-            <div>- Developed a GUI to visualize performance, showcasing algorithm optimization in Java for efficient employee data management.</div>
-          </div>
-        </div>
-
-        <!-- Project 2: Object Detection Tasks in the Logistics Field -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">May – Sep 2023</div>
-          <div style="flex: 1;">
-            <div><strong>Object Detection Tasks in the Logistics Field</strong></div>
-            <div>- Applied project and team management principles to lead four members, establish strategic milestones, and foster a collaborative environment.</div>
-            <div>- Optimized the DINO transformer and YOLOv5 model for object detection across diverse domains, achieving a 7.5% higher accuracy than the baseline.</div>
-          </div>
-        </div>
-
-        <!-- Project 1: Development of Marionette Motion Control System -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan – Dec 2022</div>
-          <div style="flex: 1;">
-            <div><strong>Development of Marionette Motion Control System</strong></div>
-            <div>- Designed a real-time puppet motion system using Kinect v1 for motion tracking.</div>
-            <div>- Integrated motor control to precisely replicate human-to-puppet movements with gesture recognition.</div>
-          </div>
-        </div>
-
       </div>
 
-      <h2>Experiences</h2>
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-
-        <!-- Experience 1: Teaching Assistance: CS401 Introduction to Advanced Studies I -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Teaching Assistant: CS401 Introduction to Advanced Studies I</strong></div>
-            <div style="color: #666;">Illinois Institute of Technology</div>
-            <div>- Delivered comprehensive lab-based instruction on data structures and Java programming.</div>
-            <div>- Oversaw assignment grading and exam proctoring, providing targeted, constructive feedback to drive student improvement.</div>
-          </div>
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Jun 2025</div>
+        <div>
+          <strong>Dynamic MRI&nbsp;/&nbsp;CT Segmentation</strong><br>
+          – ITK-SNAP segmentation of cranial implants; regression models predict 30- &amp; 90-day shifts.<br>
+          – Weekly cross-disciplinary reviews refine clinical metrics.
         </div>
-
-        <!-- Experience 2: Teaching Assistance: CS402 Introduction to Advanced Studies II -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan 2025 – Present</div>
-          <div style="flex: 1;">
-            <div><strong>Teaching Assistant: CS402 Introduction to Advanced Studies II</strong></div>
-            <div style="color: #666;">Illinois Institute of Technology</div>
-            <div>- Delivered comprehensive lab-based instruction on computer architecture and C/C++ software development.</div>
-            <div>- Oversaw assignment grading and exam proctoring, offering detailed feedback to facilitate student growth.</div>
-          </div>
-        </div>
-
-        <!-- Experience 3: Teaching Assistance: Software Programming -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Mar – Jun 2023</div>
-          <div style="flex: 1;">
-            <div><strong>Teaching Assistant: Software Programming</strong></div>
-            <div style="color: #666;">Seoul National University of Science and Technology</div>
-            <div>- Graded assignments and supervised exams for the Software Programming course, upholding academic standards and integrity.</div>
-            <div>- Addressed student inquiries about C/C++ with in-depth guidance, fostering a supportive and engaging learning environment.</div>
-          </div>
-        </div>
-
-        <!-- Experience 4: Research Assistance -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Jan – Dec 2023</div>
-          <div style="flex: 1;">
-            <div><strong>Research Assistant</strong></div>
-            <div style="color: #666;">Seoul National University of Science and Technology</div>
-            <div>- Collaborated with a faculty member and two researchers to develop object detection and incremental learning tasks, leveraging architectures such as ResNet, YOLO, and ViT.</div>
-            <div>- Communicated technical findings effectively with peers and advisors, contributing to technical reports and documentation.</div>
-          </div>
-        </div>
-
       </div>
 
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> Python, Java, C/C++, SQL</li>
-        <li><strong>Frameworks and Tools:</strong> PyTorch, TensorFlow, OpenCV, Scikit-Learn, Keras</li>
-        <li><strong>Technologies:</strong> Machine Learning, Knowledge Distillation, Computer Vision, Data Analysis</li>
-        <li><strong>Others:</strong> Linux (Ubuntu), Git, MS Office</li>
-      </ul>
-
-      <h2>Honors</h2>
-      <div style="display: flex; flex-direction: column;">
-
-        <!-- Honor 1: Illinois Institute of Technology Graduate Pathways Scholarship -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Apr 2024</div>
-          <div style="flex: 1;">
-            <strong>Illinois Institute of Technology Graduate Pathways Scholarship</strong>
-          </div>
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div>
+          <strong>Real-Time Microfluidic Mixing Control</strong><br>
+          – SVR models (RMSE 0.041 µm/s) trained on 100 ANSYS-Fluent simulations.<br>
+          – Abstract submitted to BMES&nbsp;2025.
         </div>
-
-        <!-- Honor 2: First Prize at 2023 CJ Logistics Future Technology Challenge -->
-        <div style="display: flex; align-items: flex-start; gap: 20px;">
-          <div style="flex: 0 0 100px; font-weight: bold; color: #666;">Sep 2023</div>
-          <div style="flex: 1;">
-            <strong>First Prize at 2023 CJ Logistics Future Technology Challenge</strong>
-          </div>
-        </div>
-
       </div>
+
     </div>
 
-    <!-- Sidebar / Photo & Social Links -->
-    <div style="flex: 1; min-width: 200px; text-align: left;">
-      <img src="./images/headshot.png" alt="Headshot" 
-           style="width: 100%; max-width: 300px; border-radius: 5%; margin-bottom: 10px;">
-      <!-- Social icons -->
-      <div style="display: flex; align-items: center; gap: 10px; margin-top: -10px;">
-        <!-- Email icon -->
-        <a href="mailto:slim24@hawk.iit.edu" 
-           style="display: inline-block; text-decoration: none; color: #333;">
-          <img src="./images/email.png" alt="Email" style="width: 50px; height: 50px;">
-        </a>
-        <!-- LinkedIn icon -->
-        <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" 
-           style="display: inline-block; text-decoration: none; color: #333;">
-          <img src="./images/linkedin.png" alt="LinkedIn" style="width: 50px; height: 50px;">
-        </a>
-        <!-- GitHub icon -->
-        <a href="https://github.com/seonghwan97" target="_blank" 
-           style="display: inline-block; text-decoration: none; color: #333;">
-          <img src="./images/git.png" alt="GitHub" style="width: 50px; height: 50px;">
-        </a>
+    <!-- Publications -->
+    <h2>Publications &amp; Presentations</h2>
+    <ul>
+      <li>
+        Lim, S., &amp; Bhushan, A. (2025).
+        <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
+        Submitted to Biomedical Engineering Society (BMES) Annual Meeting 2025.
+      </li>
+    </ul>
+
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <div class="flex-col">
+
+      <div class="flex-row">
+        <div class="date">Oct – Nov 2024</div>
+        <div>
+          <strong><a href="https://github.com/seonghwan97/NICE-with-KD.git" target="_blank">
+            NICE with Knowledge Distillation</a></strong><br>
+          – Boosted class-incremental learning (CIFAR-10 39 → 49 %, MNIST 44 → 59 %) via
+          KD &amp; dynamic neuron pruning.
+        </div>
       </div>
+
+      <div class="flex-row">
+        <div class="date">Oct – Nov 2024</div>
+        <div>
+          <strong><a href="https://github.com/seonghwan97/Data-Structure-Performance-Analysis.git" target="_blank">
+            Data-Structure Performance Visualizer</a></strong><br>
+          – Java GUI benchmarking arrays, linked lists, and BSTs for workforce-data apps.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">May – Sep 2023</div>
+        <div>
+          <strong>Logistics Object Detection</strong><br>
+          – Led 4-person team, optimizing DINO Transformer &amp; YOLOv5 (+7.5 pp accuracy).
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Feb – Dec 2022</div>
+        <div>
+          <strong>Marionette Motion Control</strong><br>
+          – Kinect v1 skeletal tracking with servo motors for real-time puppet mimicry.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Teaching Experience -->
+    <h2>Teaching Experience</h2>
+    <div class="flex-col">
+
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div>
+          <strong>CS402 Introduction to Advanced Studies II – TA</strong><br>
+          – Labs on computer architecture &amp; C/C++; grading and mentoring.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div>
+          <strong>CS401 Introduction to Advanced Studies I – TA</strong><br>
+          – Graduate labs on Java, data structures, algorithms; supervised assessments.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Mar – Jun 2023</div>
+        <div>
+          <strong>Software Programming – TA</strong><br>
+          – Guided C/C++ coursework; proctored exams (SeoulTech).
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Honors -->
+    <h2>Honors &amp; Awards</h2>
+    <div class="flex-col">
+      <div class="flex-row"><div class="date">May 2025</div><div><strong>Marshal Honor – Illinois Tech Commencement</strong></div></div>
+      <div class="flex-row"><div class="date">Apr 2024</div><div><strong>Graduate Pathways Scholarship – IIT</strong></div></div>
+      <div class="flex-row"><div class="date">Sep 2023</div><div><strong>1st Prize – CJ Logistics Future Technology Challenge ($15 k)</strong></div></div>
+    </div>
+
+    <!-- Skills -->
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python, Java, C/C++</li>
+      <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
+      <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA</li>
+      <li><strong>Concepts:</strong> Deep Learning, Computer Vision, ML Ops, Knowledge Distillation, Data Analysis</li>
+    </ul>
+
+    <!-- Languages -->
+    <h2>Languages</h2>
+    <ul>
+      <li>Korean: Native</li>
+      <li>English: Proficient</li>
+    </ul>
+
+  </div>
+
+  <!-- Sidebar -->
+  <div style="flex:1; min-width:200px;">
+    <img src="./images/headshot.png" alt="Seonghwan Lim headshot"
+         style="width:100%; max-width:300px; border-radius:5%; margin-bottom:10px;">
+    <div style="display:flex; gap:10px;">
+      <a href="mailto:slim24@hawk.iit.edu"><img src="./images/email.png" alt="Email" style="width:50px;"></a>
+      <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn" style="width:50px;"></a>
+      <a href="https://github.com/seonghwan97" target="_blank"><img src="./images/git.png" alt="GitHub" style="width:50px;"></a>
     </div>
   </div>
 
+</div>
 </body>
 </html>
