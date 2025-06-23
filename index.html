@@ -5,13 +5,14 @@
   <title>Seonghwan Lim – Portfolio</title>
   <style>
     body { margin:0; font-family: Arial, sans-serif; line-height:1.6; }
-    h1,h2 { margin:10px 0; }
-    a   { text-decoration:none; color:#666; }
-    .date { flex:0 0 110px; font-weight:bold; color:#666; }
+    h1, h2 { margin:10px 0; }
+    a  { text-decoration:none; color:#666; }
+    .date { flex:0 0 120px; font-weight:bold; color:#666; }
     .flex-col { display:flex; flex-direction:column; gap:20px; }
     .flex-row { display:flex; align-items:flex-start; gap:20px; }
   </style>
 </head>
+
 <body>
 
 <!-- Banner -->
@@ -19,11 +20,15 @@
   <h1>Seonghwan Lim</h1>
   <p>
     <a href="https://www.iit.edu/computer-science" target="_blank">Computer Science,</a>
-    <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a>
+    <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a> · Chicago, IL
+  </p>
+  <p style="margin:4px 0; color:#666;">
+    +1&nbsp;(312)&nbsp;287-3570 · 
+    <a href="mailto:slim24@hawk.illinoistech.edu">slim24@hawk.illinoistech.edu</a> ·
+    <a href="#">Website</a>
   </p>
 </div>
 
-<!-- Main Container -->
 <div style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
 
   <!-- Main Content -->
@@ -31,48 +36,96 @@
 
     <!-- Intro -->
     <p>
-      <strong>Hi everyone!</strong> I’m an M.S. candidate specializing in
-      <strong>computer vision &amp; machine learning</strong>.
-      I build robust visual models (PyTorch / TensorFlow / OpenCV) that solve real-world
-      problems in logistics, bioengineering, and human–computer interaction.
+      <strong>My name is Seonghwan Lim.</strong> I am currently pursuing a 
+      <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT).
+      I earned my <em>Bachelor of Science in Electrical &amp; Information Engineering</em> from 
+      Seoul National University of Science &amp; Technology in August&nbsp;2023.
     </p>
     <p>
-      My recent work includes <strong>object detection</strong> with YOLOv5 + Transformers
-      (+7.5&nbsp;pp accuracy), <strong>real-time microfluidic mixing control</strong> via imaging,
-      and <strong>MRI-guided cranial-implant monitoring</strong>.
-      I also explore <strong>multi-view 3D pose estimation</strong> and transformer-based
-      energy-expenditure prediction for XR safety training, plus
-      <strong>drone 3D surface scanning</strong> for aircraft inspection.
+      My work centres on <strong>computer vision</strong> and <strong>machine learning</strong>.
+      I study visual perception, multi-view analysis, and interaction modelling, with a goal of building 
+      robust visual systems that predict and respond to complex, dynamic scenes in the real world.
     </p>
+
+    <!-- Education -->
+    <h2>Education</h2>
+    <div class="flex-col">
+
+      <div class="flex-row">
+        <div class="date">May&nbsp;2026</div>
+        <div>
+          <strong>M.S. in Computer Science</strong><br>
+          Illinois Institute of Technology — GPA&nbsp;4.0/4.0
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Aug&nbsp;2023</div>
+        <div>
+          <strong>B.S. in Electrical &amp; Information Engineering</strong><br>
+          Seoul National University of Science &amp; Technology
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Feb – Dec&nbsp;2022</div>
+        <div>
+          <em>Capstone</em>: Marionette Motion Control System (Advisor&nbsp;: Prof.&nbsp;Sooyeong Yi)<br>
+          – Designed a servo-driven puppet (DOF analysis) and Kinect-based real-time gesture replication.
+        </div>
+      </div>
+    </div>
 
     <!-- Research Experience -->
     <h2>Research Experience</h2>
     <div class="flex-col">
 
       <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
+        <div class="date">Feb&nbsp;2025 – Present</div>
+        <div>
+          <strong>Road-Surface Classification &amp; Generation</strong><br>
+          Dept.&nbsp;ECE, IIT (PI : Prof.&nbsp;Joohee Kim)<br>
+          – EfficientNet-B0 pipeline on RSCD → accuracy 88.9 → 92.7 %.<br>
+          – DreamBooth-LoRA tuning lowered FID 100.96 → 66.21, enriching synthetic data.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan&nbsp;2025 – Present</div>
         <div>
           <strong>Multi-view 3D Pose &amp; Energy Prediction</strong><br>
-          – Five-camera pipeline with AlphaPose &amp; MotionBERT for XR safety-training.<br>
-          – Extending to transformer models for multimodal energy-expenditure estimation.
+          Dept.&nbsp;CS, IIT (PI : Prof.&nbsp;Gady Agam)<br>
+          – Five-camera pipeline with AlphaPose + MotionBERT, surpassing MediaPipe baseline.<br>
+          – Extending to transformer-based models for multimodal energy-expenditure estimation.
         </div>
       </div>
 
       <div class="flex-row">
-        <div class="date">Jan 2025 – Jun 2025</div>
+        <div class="date">Jan – Jun&nbsp;2025</div>
         <div>
-          <strong>Dynamic MRI&nbsp;/&nbsp;CT Segmentation</strong><br>
-          – ITK-SNAP segmentation of cranial implants; regression models predict 30- &amp; 90-day shifts.<br>
-          – Weekly cross-disciplinary reviews refine clinical metrics.
+          <strong>MRI-guided Cranial-Implant Monitoring</strong><br>
+          Dept.&nbsp;BME, IIT (Advisor : Prof.&nbsp;Keigo Kawaji)<br>
+          – ITK-SNAP segmentation; linear regression predicts implant shifts at 30 &amp; 90 days.
         </div>
       </div>
 
       <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
+        <div class="date">Jan&nbsp;2025 – Present</div>
         <div>
-          <strong>Real-Time Microfluidic Mixing Control</strong><br>
-          – SVR models (RMSE 0.041 µm/s) trained on 100 ANSYS-Fluent simulations.<br>
-          – Abstract submitted to BMES&nbsp;2025.
+          <strong>Microfluidic Mixing Control</strong><br>
+          Dept.&nbsp;BME, IIT (Advisor : Prof.&nbsp;Abhinav Bhushan)<br>
+          – Quantified concentration fields; SVR (RMSE 0.041 µm/s) trained on 100 ANSYS simulations.<br>
+          – Abstract submitted to BMES 2025.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan – Dec&nbsp;2023</div>
+        <div>
+          <strong>Logistics Object Detection &amp; Continual Learning</strong><br>
+          Dept.&nbsp;EIE, SeoulTech (Advisor : Prof.&nbsp;Yeejin Lee)<br>
+          – YOLOv5 + DINO Transformer, +7.5 pp accuracy via domain-specific augmentation, TTA, WBF.<br>
+          – Implemented knowledge-distillation strategies for class-incremental learning.
         </div>
       </div>
 
@@ -82,14 +135,14 @@
     <h2>Publications &amp; Presentations</h2>
     <ul>
       <li>
-        Lim, S., &amp; Bhushan, A. (2025).
+        Lim, S., &amp; Bhushan, A. (2025). 
         <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
         Submitted to Biomedical Engineering Society (BMES) Annual Meeting 2025.
       </li>
     </ul>
 
-    <!-- Projects -->
-    <h2>Projects</h2>
+    <!-- Selected Projects -->
+    <h2>Selected Projects</h2>
     <div class="flex-col">
 
       <div class="flex-row">
@@ -97,8 +150,7 @@
         <div>
           <strong><a href="https://github.com/seonghwan97/NICE-with-KD.git" target="_blank">
             NICE with Knowledge Distillation</a></strong><br>
-          – Boosted class-incremental learning (CIFAR-10 39 → 49 %, MNIST 44 → 59 %) via
-          KD &amp; dynamic neuron pruning.
+          – Boosted incremental-learning accuracy (CIFAR-10 39→49 %, MNIST 44→59 %) via KD &amp; neuron pruning.
         </div>
       </div>
 
@@ -107,7 +159,7 @@
         <div>
           <strong><a href="https://github.com/seonghwan97/Data-Structure-Performance-Analysis.git" target="_blank">
             Data-Structure Performance Visualizer</a></strong><br>
-          – Java GUI benchmarking arrays, linked lists, and BSTs for workforce-data apps.
+          – Java GUI profiling arrays, linked lists, and BSTs for HR data workflows.
         </div>
       </div>
 
@@ -115,7 +167,7 @@
         <div class="date">May – Sep 2023</div>
         <div>
           <strong>Logistics Object Detection</strong><br>
-          – Led 4-person team, optimizing DINO Transformer &amp; YOLOv5 (+7.5 pp accuracy).
+          – Led 4-person team; optimized YOLOv5 &amp; DINO Transformer (+7.5 pp accuracy).
         </div>
       </div>
 
@@ -123,28 +175,28 @@
         <div class="date">Feb – Dec 2022</div>
         <div>
           <strong>Marionette Motion Control</strong><br>
-          – Kinect v1 skeletal tracking with servo motors for real-time puppet mimicry.
+          – Real-time Kinect skeletal tracking with servo motors for puppet mimicry.
         </div>
       </div>
 
     </div>
 
-    <!-- Teaching Experience -->
+    <!-- Teaching -->
     <h2>Teaching Experience</h2>
     <div class="flex-col">
 
       <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
+        <div class="date">Jan&nbsp;2025 – Present</div>
         <div>
-          <strong>CS402 Introduction to Advanced Studies II – TA</strong><br>
+          <strong>CS 402 – Intro to Advanced Studies II</strong> &nbsp;· Teaching Assistant<br>
           – Labs on computer architecture &amp; C/C++; grading and mentoring.
         </div>
       </div>
 
       <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
+        <div class="date">Jan&nbsp;2025 – Present</div>
         <div>
-          <strong>CS401 Introduction to Advanced Studies I – TA</strong><br>
+          <strong>CS 401 – Intro to Advanced Studies I</strong> &nbsp;· Teaching Assistant<br>
           – Graduate labs on Java, data structures, algorithms; supervised assessments.
         </div>
       </div>
@@ -152,8 +204,8 @@
       <div class="flex-row">
         <div class="date">Mar – Jun 2023</div>
         <div>
-          <strong>Software Programming – TA</strong><br>
-          – Guided C/C++ coursework; proctored exams (SeoulTech).
+          <strong>Software Programming (SeoulTech)</strong> &nbsp;· Teaching Assistant<br>
+          – Guided C/C++ coursework; proctored exams; graded assignments.
         </div>
       </div>
 
@@ -162,15 +214,15 @@
     <!-- Honors -->
     <h2>Honors &amp; Awards</h2>
     <div class="flex-col">
-      <div class="flex-row"><div class="date">May 2025</div><div><strong>Marshal Honor – Illinois Tech Commencement</strong></div></div>
-      <div class="flex-row"><div class="date">Apr 2024</div><div><strong>Graduate Pathways Scholarship – IIT</strong></div></div>
-      <div class="flex-row"><div class="date">Sep 2023</div><div><strong>1st Prize – CJ Logistics Future Technology Challenge ($15 k)</strong></div></div>
+      <div class="flex-row"><div class="date">2025</div><div><strong>Marshal Honor</strong> – Illinois Tech Commencement</div></div>
+      <div class="flex-row"><div class="date">2024</div><div><strong>Graduate Pathways Scholarship</strong> – IIT</div></div>
+      <div class="flex-row"><div class="date">2023</div><div><strong>1st Prize – CJ Logistics Future Technology Challenge</strong> ($15 k)</div></div>
     </div>
 
     <!-- Skills -->
     <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Programming:</strong> Python, Java, C/C++</li>
+      <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
       <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
       <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA</li>
       <li><strong>Concepts:</strong> Deep Learning, Computer Vision, ML Ops, Knowledge Distillation, Data Analysis</li>
@@ -179,8 +231,8 @@
     <!-- Languages -->
     <h2>Languages</h2>
     <ul>
-      <li>Korean: Native</li>
-      <li>English: Proficient</li>
+      <li>Korean – Native</li>
+      <li>English – Proficient</li>
     </ul>
 
   </div>
