@@ -38,27 +38,20 @@
     <!-- Research Interests -->
     <h2>Research Interests</h2>
     <p>
-      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world.
-      My current projects include:
+      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world. My current projects include:
     </p>
     <ul>
-      <li>Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).</li>
-      <li>Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.</li>
-      <li>Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.</li>
+      <li>Analyzing road surface conditions for robust visual recognition (e.g., dry, wet, flooded; asphalt vs. concrete; crack detection).</li>
+      <li>Extracting 3D human poses in XR environments to estimate energy expenditure for varied activities.</li>
+      <li>Capturing and quantifying mixing in microfluidic devices, then predicting inputs for precise control.</li>
     </ul>
-    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.</p>
+    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic, responsive interactions in complex real-world scenarios.</p>
 
     <!-- Education -->
     <h2>Education</h2>
     <div class="flex-col">
-      <div class="flex-row">
-        <div class="date">May 2026</div>
-        <div><strong>M.S. in Computer Science</strong><br>Illinois Institute of Technology — GPA 4.0/4.0</div>
-      </div>
-      <div class="flex-row">
-        <div class="date">Aug 2023</div>
-        <div><strong>B.S. in Electrical &amp; Information Engineering</strong><br>Seoul National University of Science &amp; Technology</div>
-      </div>
+      <div class="flex-row"><div class="date">May 2026</div><div><strong>M.S. in Computer Science</strong><br>Illinois Institute of Technology — GPA 4.0/4.0</div></div>
+      <div class="flex-row"><div class="date">Aug 2023</div><div><strong>B.S. in Electrical &amp; Information Engineering</strong><br>Seoul National University of Science &amp; Technology</div></div>
     </div>
 
     <!-- Research Experience -->
@@ -66,40 +59,32 @@
     <div class="flex-col">
       <div class="flex-row">
         <div class="date">Feb 2025 – Present</div>
-        <div><strong>Research Assistant, Department of Electrical and Computer Engineering, Illinois Institute of Technology (PI: Prof. Joohee Kim)</strong><br>
-          Developed an EfficientNet-B0 pipeline for classifying road-surface conditions on the RSCD dataset, improving accuracy from 88.9 % to 92.7 % by addressing class imbalance.
-          Enhanced synthetic-image realism (FID 100.96 → 56.49) by optimizing DreamBooth-LoRA training parameters and prompts.
+        <div><strong>Department of Electrical and Computer Engineering, IIT (PI : Prof. Joohee Kim)</strong><br>
+          Developed an EfficientNet-B0 pipeline for road-surface classification (RSCD) raising accuracy 88.9 % → 92.7 % and reduced FID 100.96 → 56.49 by tuning DreamBooth-LoRA.
         </div>
       </div>
-
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Research Assistant, Department of Computer Science, Illinois Institute of Technology (PI: Prof. Gady Agam)</strong><br>
-          Built a multi-view 3D pose-estimation pipeline with synchronized five-camera input, surpassing MediaPipe accuracy by combining AlphaPose keypoints with MotionBERT.
-          Currently extending the system with transformer-based models for energy-expenditure prediction.
+        <div><strong>Department of Computer Science, IIT (PI : Prof. Gady Agam)</strong><br>
+          Built a five-camera 3D pose pipeline (AlphaPose + MotionBERT) outperforming MediaPipe; extending to transformer-based energy-expenditure prediction.
         </div>
       </div>
-
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Abhinav Bhushan)</strong><br>
-          Quantified fluid-concentration fields from images and modeled their relation to inlet velocities in microfluidic devices.
-          Simulated 100 three-channel flow scenarios in ANSYS Fluent and achieved 0.0413 µm/s RMSE using Support Vector Regression.
-          Abstract submitted to BMES 2025.
+        <div><strong>Department of Biomedical Engineering, IIT (Advisor : Prof. Abhinav Bhushan)</strong><br>
+          Quantified concentration fields and modelled their relation to inlet velocities (RMSE 0.041 µm/s on 100 ANSYS simulations); abstract submitted to BMES 2025.
         </div>
       </div>
-
       <div class="flex-row">
         <div class="date">Jan – Jun 2025</div>
-        <div><strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Keigo Kawaji)</strong><br>
-          Performed structural analysis and segmentation of brain MRI scans with ITK-SNAP and developed linear-regression models to predict cranial-implant shifts at 30- and 90-day follow-ups.
+        <div><strong>Department of Biomedical Engineering, IIT (Advisor : Prof. Keigo Kawaji)</strong><br>
+          Segmented brain MRI scans (ITK-SNAP) and built linear models to predict cranial-implant shifts at 30 & 90 days.
         </div>
       </div>
-
       <div class="flex-row">
         <div class="date">Jan – Dec 2023</div>
-        <div><strong>Research Assistant, Department of Electrical and Information Engineering, Seoul National University of Science and Technology (Advisor: Prof. Yeejin Lee)</strong><br>
-          Conducted package-box object-detection research using YOLOv5 and DINO Transformer, boosting accuracy by 7.5 pp via domain-specific augmentation, TTA, and WBF, and implemented knowledge-distillation for class-incremental learning.
+        <div><strong>Department of Electrical and Information Engineering, SeoulTech (Advisor : Prof. Yeejin Lee)</strong><br>
+          Boosted package-box detection by 7.5 pp with YOLOv5 + DINO and domain-specific augmentations; implemented knowledge distillation for continual learning.
         </div>
       </div>
     </div>
@@ -107,62 +92,49 @@
     <!-- Projects -->
     <h2>Projects</h2>
     <div class="flex-col">
-    
       <div class="flex-row">
         <div class="date">Apr – Jun 2025</div>
-        <div><strong>Head-Tracking Semi-VR Environment</strong> — Implemented a transformer model that predicts head yaw, pitch, and roll from Mediapipe facial keypoints on the BIWI dataset, then integrated real-time webcam inference with Unity to create a semi-immersive VR environment controlled by head movement.</div>
+        <div><strong>Head-Tracking Semi-VR Environment</strong><br>
+             Implemented a transformer that predicts head yaw, pitch, and roll from Mediapipe facial keypoints (BIWI dataset) and integrated real-time webcam inference with Unity to enable head-controlled, semi-immersive VR navigation.</div>
       </div>
-    
+
       <div class="flex-row">
         <div class="date">Feb – Jun 2025</div>
-        <div><strong>AI-Generated Text Detection Program</strong> — Developed a detection system for AI-generated text using logistic regression, linear regression, and Naïve Bayes classifiers applied to synthetic and human-written corpora.</div>
+        <div><strong>AI-Generated Text Detection Program</strong><br>
+             Created a detection pipeline for AI-generated text using logistic regression, linear regression, and Naïve Bayes on combined synthetic and human-written corpora.</div>
       </div>
-    
+
       <div class="flex-row">
         <div class="date">Oct – Nov 2024</div>
-        <div><strong>NICE with Knowledge Distillation</strong> — Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) framework for class-incremental learning and boosted accuracy from 39 % → 49 % on CIFAR-10 and 44 % → 59 % on MNIST by incorporating knowledge distillation.</div>
+        <div><strong>NICE with Knowledge Distillation</strong><br>
+             Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) method for class-incremental learning and lifted accuracy 39 %→49 % on CIFAR-10 and 44 %→59 % on MNIST via knowledge distillation.</div>
       </div>
-    
+
       <div class="flex-row">
         <div class="date">Oct – Nov 2024</div>
-        <div><strong>Data-Structure GUI</strong> — Built a Java GUI tool that profiles and visualizes the performance of arrays, linked lists, and binary search trees to support HR data-workflow optimization.</div>
+        <div><strong>Data-Structure GUI</strong><br>
+             Developed a Java GUI that profiles and visualizes performance of arrays, linked lists, and BSTs, streamlining HR data-workflow optimization.</div>
       </div>
-    
+
       <div class="flex-row">
         <div class="date">May – Sep 2023</div>
-        <div><strong>Package-Box Object Detection</strong> — Led a logistics object-detection project with YOLOv5 and DINO Transformer, achieving a 7.5 pp accuracy gain through domain-specific augmentation, TTA, and WBF.</div>
+        <div><strong>Package-Box Object Detection</strong><br>
+             Led logistics object-detection with YOLOv5 + DINO Transformer, gaining 7.5 pp accuracy via domain-specific augmentation, TTA, and WBF.</div>
       </div>
-    
+
       <div class="flex-row">
         <div class="date">Feb – Dec 2022</div>
-        <div><strong>Marionette Servo-Motor Control System</strong> — Designed a servo-motor marionette system by analysing degrees of freedom and achieved real-time gesture replication using Kinect-based 3D skeleton tracking.</div>
+        <div><strong>Marionette Servo-Motor Control System</strong><br>
+             Designed a servo-motor marionette by analysing DOFs and achieved real-time gesture replication using Kinect-based 3D skeleton tracking.</div>
       </div>
-    
     </div>
 
     <!-- Teaching Experience -->
     <h2>Teaching Experience</h2>
     <div class="flex-col">
-      <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
-        <div><strong>Teaching Assistant, Introduction to Advanced Studies II, College of Computing, IIT</strong><br>
-          Led labs on MIPS/QtSpim assembly and introductory C programming, encouraged active engagement, and provided individualized feedback on assessments.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan – Jun 2025</div>
-        <div><strong>Teaching Assistant, Introduction to Advanced Studies I, College of Computing, IIT</strong><br>
-          Conducted graduate labs in Java, data structures, and algorithms, emphasizing problem-solving and critical thinking, and delivered detailed personalized feedback.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Mar – Jun 2023</div>
-        <div><strong>Teaching Assistant, Software Application, Seoul National University of Science and Technology</strong><br>
-          Supervised exams and assignments in C/C++ programming courses, ensuring academic fairness and offering one-on-one mentoring to enhance proficiency.
-        </div>
-      </div>
+      <div class="flex-row"><div class="date">Jan 2025 – Present</div><div><strong>TA, Intro to Advanced Studies II, IIT</strong><br>Led assembly (MIPS/QtSpim) and C-programming labs, providing individualized feedback and assessment.</div></div>
+      <div class="flex-row"><div class="date">Jan – Jun 2025</div><div><strong>TA, Intro to Advanced Studies I, IIT</strong><br>Guided graduate labs in Java, data structures, and algorithms; delivered detailed, personalized feedback.</div></div>
+      <div class="flex-row"><div class="date">Mar – Jun 2023</div><div><strong>TA, Software Application, SeoulTech</strong><br>Supervised C/C++ programming exams and provided one-on-one mentoring to improve proficiency.</div></div>
     </div>
 
     <!-- Honors & Awards -->
@@ -194,6 +166,5 @@
   </div>
 
 </div>
-
 </body>
 </html>
