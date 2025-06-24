@@ -22,11 +22,6 @@
     <a href="https://www.iit.edu/computer-science" target="_blank">Computer Science,</a>
     <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a> · Chicago, IL
   </p>
-  <p style="margin:4px 0; color:#666;">
-    +1&nbsp;(312)&nbsp;287-3570 · 
-    <a href="mailto:slim24@hawk.illinoistech.edu">slim24@hawk.illinoistech.edu</a> ·
-    <a href="#">Website</a>
-  </p>
 </div>
 
 <div style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
@@ -36,21 +31,34 @@
 
     <!-- Intro -->
     <p>
-      <strong>My name is Seonghwan Lim.</strong> I am currently pursuing a 
-      <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT).
-      I earned my <em>Bachelor of Science in Electrical &amp; Information Engineering</em> from 
-      Seoul National University of Science &amp; Technology in August&nbsp;2023.
+      My name is Seonghwan Lim. I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT). I hold a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
     </p>
+
+    <!-- Research Interests -->
+    <h2>Research Interests</h2>
     <p>
-      My work centres on <strong>computer vision</strong> and <strong>machine learning</strong>.
-      I study visual perception, multi-view analysis, and interaction modelling, with a goal of building 
-      robust visual systems that predict and respond to complex, dynamic scenes in the real world.
+      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world. My current projects include:
+    </p>
+
+    <ul>
+      <li>
+        Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).
+      </li>
+      <li>
+        Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.
+      </li>
+      <li>
+        Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.
+      </li>
+    </ul>
+
+    <p>
+      Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.
     </p>
 
     <!-- Education -->
     <h2>Education</h2>
     <div class="flex-col">
-
       <div class="flex-row">
         <div class="date">May&nbsp;2026</div>
         <div>
@@ -67,185 +75,16 @@
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Feb – Dec&nbsp;2022</div>
-        <div>
-          <em>Capstone</em>: Marionette Motion Control System (Advisor&nbsp;: Prof.&nbsp;Sooyeong Yi)<br>
-          – Designed a servo-driven puppet (DOF analysis) and Kinect-based real-time gesture replication.
-        </div>
-      </div>
     </div>
 
-    <!-- Research Experience -->
-    <h2>Research Experience</h2>
-    <div class="flex-col">
-
-      <div class="flex-row">
-        <div class="date">Feb&nbsp;2025 – Present</div>
-        <div>
-          <strong>Road-Surface Classification &amp; Generation</strong><br>
-          Dept.&nbsp;ECE, IIT (PI : Prof.&nbsp;Joohee Kim)<br>
-          – EfficientNet-B0 pipeline on RSCD → accuracy 88.9 → 92.7 %.<br>
-          – DreamBooth-LoRA tuning lowered FID 100.96 → 66.21, enriching synthetic data.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan&nbsp;2025 – Present</div>
-        <div>
-          <strong>Multi-view 3D Pose &amp; Energy Prediction</strong><br>
-          Dept.&nbsp;CS, IIT (PI : Prof.&nbsp;Gady Agam)<br>
-          – Five-camera pipeline with AlphaPose + MotionBERT, surpassing MediaPipe baseline.<br>
-          – Extending to transformer-based models for multimodal energy-expenditure estimation.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan – Jun&nbsp;2025</div>
-        <div>
-          <strong>MRI-guided Cranial-Implant Monitoring</strong><br>
-          Dept.&nbsp;BME, IIT (Advisor : Prof.&nbsp;Keigo Kawaji)<br>
-          – ITK-SNAP segmentation; linear regression predicts implant shifts at 30 &amp; 90 days.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan&nbsp;2025 – Present</div>
-        <div>
-          <strong>Microfluidic Mixing Control</strong><br>
-          Dept.&nbsp;BME, IIT (Advisor : Prof.&nbsp;Abhinav Bhushan)<br>
-          – Quantified concentration fields; SVR (RMSE 0.041 µm/s) trained on 100 ANSYS simulations.<br>
-          – Abstract submitted to BMES 2025.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan – Dec&nbsp;2023</div>
-        <div>
-          <strong>Logistics Object Detection &amp; Continual Learning</strong><br>
-          Dept.&nbsp;EIE, SeoulTech (Advisor : Prof.&nbsp;Yeejin Lee)<br>
-          – YOLOv5 + DINO Transformer, +7.5 pp accuracy via domain-specific augmentation, TTA, WBF.<br>
-          – Implemented knowledge-distillation strategies for class-incremental learning.
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Publications -->
-    <h2>Publications &amp; Presentations</h2>
-    <ul>
-      <li>
-        Lim, S., &amp; Bhushan, A. (2025). 
-        <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
-        Submitted to Biomedical Engineering Society (BMES) Annual Meeting 2025.
-      </li>
-    </ul>
-
-    <!-- Selected Projects -->
-    <h2>Selected Projects</h2>
-    <div class="flex-col">
-
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div>
-          <strong><a href="https://github.com/seonghwan97/NICE-with-KD.git" target="_blank">
-            NICE with Knowledge Distillation</a></strong><br>
-          – Boosted incremental-learning accuracy (CIFAR-10 39→49 %, MNIST 44→59 %) via KD &amp; neuron pruning.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div>
-          <strong><a href="https://github.com/seonghwan97/Data-Structure-Performance-Analysis.git" target="_blank">
-            Data-Structure Performance Visualizer</a></strong><br>
-          – Java GUI profiling arrays, linked lists, and BSTs for HR data workflows.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">May – Sep 2023</div>
-        <div>
-          <strong>Logistics Object Detection</strong><br>
-          – Led 4-person team; optimized YOLOv5 &amp; DINO Transformer (+7.5 pp accuracy).
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Feb – Dec 2022</div>
-        <div>
-          <strong>Marionette Motion Control</strong><br>
-          – Real-time Kinect skeletal tracking with servo motors for puppet mimicry.
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Teaching -->
-    <h2>Teaching Experience</h2>
-    <div class="flex-col">
-
-      <div class="flex-row">
-        <div class="date">Jan&nbsp;2025 – Present</div>
-        <div>
-          <strong>CS 402 – Intro to Advanced Studies II</strong> &nbsp;· Teaching Assistant<br>
-          – Labs on computer architecture &amp; C/C++; grading and mentoring.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan&nbsp;2025 – Present</div>
-        <div>
-          <strong>CS 401 – Intro to Advanced Studies I</strong> &nbsp;· Teaching Assistant<br>
-          – Graduate labs on Java, data structures, algorithms; supervised assessments.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Mar – Jun 2023</div>
-        <div>
-          <strong>Software Programming (SeoulTech)</strong> &nbsp;· Teaching Assistant<br>
-          – Guided C/C++ coursework; proctored exams; graded assignments.
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Honors -->
-    <h2>Honors &amp; Awards</h2>
-    <div class="flex-col">
-      <div class="flex-row"><div class="date">2025</div><div><strong>Marshal Honor</strong> – Illinois Tech Commencement</div></div>
-      <div class="flex-row"><div class="date">2024</div><div><strong>Graduate Pathways Scholarship</strong> – IIT</div></div>
-      <div class="flex-row"><div class="date">2023</div><div><strong>1st Prize – CJ Logistics Future Technology Challenge</strong> ($15 k)</div></div>
-    </div>
-
-    <!-- Skills -->
+    <!-- Technical Skills -->
     <h2>Technical Skills</h2>
     <ul>
       <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
-      <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
+      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
       <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA</li>
-      <li><strong>Concepts:</strong> Deep Learning, Computer Vision, ML Ops, Knowledge Distillation, Data Analysis</li>
     </ul>
 
-    <!-- Languages -->
-    <h2>Languages</h2>
-    <ul>
-      <li>Korean – Native</li>
-      <li>English – Proficient</li>
-    </ul>
-
-  </div>
-
-  <!-- Sidebar -->
-  <div style="flex:1; min-width:200px;">
-    <img src="./images/headshot.png" alt="Seonghwan Lim headshot"
-         style="width:100%; max-width:300px; border-radius:5%; margin-bottom:10px;">
-    <div style="display:flex; gap:10px;">
-      <a href="mailto:slim24@hawk.iit.edu"><img src="./images/email.png" alt="Email" style="width:50px;"></a>
-      <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn" style="width:50px;"></a>
-      <a href="https://github.com/seonghwan97" target="_blank"><img src="./images/git.png" alt="GitHub" style="width:50px;"></a>
-    </div>
   </div>
 
 </div>
