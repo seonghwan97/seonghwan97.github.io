@@ -31,8 +31,7 @@
 
     <!-- Intro -->
     <p>
-      My name is Seonghwan Lim. I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT).
-      I hold a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
+      My name is Seonghwan Lim. I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT). I hold a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
     </p>
 
     <!-- Research Interests -->
@@ -41,11 +40,11 @@
       My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world. My current projects include:
     </p>
     <ul>
-      <li>Analyzing road surface conditions for robust visual recognition (e.g., dry, wet, flooded; asphalt vs. concrete; crack detection).</li>
-      <li>Extracting 3D human poses in XR environments to estimate energy expenditure for varied activities.</li>
-      <li>Capturing and quantifying mixing in microfluidic devices, then predicting inputs for precise control.</li>
+      <li>Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).</li>
+      <li>Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.</li>
+      <li>Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.</li>
     </ul>
-    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic, responsive interactions in complex real-world scenarios.</p>
+    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.</p>
 
     <!-- Education -->
     <h2>Education</h2>
@@ -59,31 +58,31 @@
     <div class="flex-col">
       <div class="flex-row">
         <div class="date">Feb 2025 – Present</div>
-        <div><strong>Department of Electrical and Computer Engineering, Illinois Institute of Technology (PI : Prof. Joohee Kim)</strong><br>
-          Developed an EfficientNet-B0 pipeline for road-surface classification (RSCD) raising accuracy 88.9 % → 92.7 % and reduced FID 100.96 → 56.49 by tuning DreamBooth-LoRA.
+        <div><strong>Department of Electrical and Computer Engineering, IIT (PI: Prof. Joohee Kim)</strong><br>
+          Developed an EfficientNet-B0 pipeline for road-surface classification (RSCD) raising accuracy 88.9 % → 92.7 % and reduced FID 100.96 → 56.49 via DreamBooth-LoRA tuning.
         </div>
       </div>
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Department of Computer Science, Illinois Institute of Technology (PI : Prof. Gady Agam)</strong><br>
-          Built a five-camera 3D pose pipeline (AlphaPose + MotionBERT) outperforming MediaPipe; extending to transformer-based energy-expenditure prediction.
+        <div><strong>Department of Computer Science, IIT (PI: Prof. Gady Agam)</strong><br>
+          Built a five-camera 3D-pose pipeline (AlphaPose + MotionBERT) outperforming MediaPipe; extending to transformer-based energy-expenditure prediction.
         </div>
       </div>
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Department of Biomedical Engineering, Illinois Institute of Technology (Advisor : Prof. Abhinav Bhushan)</strong><br>
-          Quantified concentration fields and modelled their relation to inlet velocities (RMSE 0.041 µm/s on 100 ANSYS simulations); abstract submitted to BMES 2025.
+        <div><strong>Department of Biomedical Engineering, IIT (Advisor: Prof. Abhinav Bhushan)</strong><br>
+          Quantified concentration fields and modelled their relation to inlet velocities (RMSE 0.041 µm/s on 100 ANSYS simulations).
         </div>
       </div>
       <div class="flex-row">
         <div class="date">Jan – Jun 2025</div>
-        <div><strong>Department of Biomedical Engineering, Illinois Institute of Technology (Advisor : Prof. Keigo Kawaji)</strong><br>
+        <div><strong>Department of Biomedical Engineering, IIT (Advisor: Prof. Keigo Kawaji)</strong><br>
           Segmented brain MRI scans (ITK-SNAP) and built linear models to predict cranial-implant shifts at 30 & 90 days.
         </div>
       </div>
       <div class="flex-row">
         <div class="date">Jan – Dec 2023</div>
-        <div><strong>Department of Electrical and Information Engineering, Seoul National University of Science and Technology (Advisor : Prof. Yeejin Lee)</strong><br>
+        <div><strong>Department of Electrical and Information Engineering, SeoulTech (Advisor: Prof. Yeejin Lee)</strong><br>
           Boosted package-box detection by 7.5 pp with YOLOv5 + DINO and domain-specific augmentations; implemented knowledge distillation for continual learning.
         </div>
       </div>
@@ -92,53 +91,41 @@
     <!-- Projects -->
     <h2>Projects</h2>
     <div class="flex-col">
-      <div class="flex-row">
-        <div class="date">Apr – Jun 2025</div>
-        <div><strong>Head-Tracking Semi-VR Environment</strong><br>
-             Implemented a transformer that predicts head yaw, pitch, and roll from Mediapipe facial keypoints (BIWI dataset) and integrated real-time webcam inference with Unity to enable head-controlled, semi-immersive VR navigation.</div>
-      </div>
+      <div class="flex-row"><div class="date">Apr – Jun 2025</div><div><strong>Head-Tracking Semi-VR Environment</strong><br>
+           Implemented a transformer model that predicts head yaw, pitch, and roll from Mediapipe facial keypoints (BIWI dataset) and integrated real-time webcam inference with Unity to enable head-controlled, semi-immersive VR navigation.</div></div>
 
-      <div class="flex-row">
-        <div class="date">Feb – Jun 2025</div>
-        <div><strong>AI-Generated Text Detection Program</strong><br>
-             Created a detection pipeline for AI-generated text using logistic regression, linear regression, and Naïve Bayes on combined synthetic and human-written corpora.</div>
-      </div>
+      <div class="flex-row"><div class="date">Feb – Jun 2025</div><div><strong>AI-Generated Text Detection Program</strong><br>
+           Created a detection pipeline for AI-generated text using logistic regression, linear regression, and Naïve Bayes on combined synthetic and human-written corpora.</div></div>
 
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div><strong>NICE with Knowledge Distillation</strong><br>
-             Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) method for class-incremental learning and lifted accuracy 39 %→49 % on CIFAR-10 and 44 %→59 % on MNIST via knowledge distillation.</div>
-      </div>
+      <div class="flex-row"><div class="date">Oct – Nov 2024</div><div><strong>NICE with Knowledge Distillation</strong><br>
+           Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) method for class-incremental learning and lifted accuracy 39 %→49 % on CIFAR-10 and 44 %→59 % on MNIST via knowledge distillation.</div></div>
 
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div><strong>Data-Structure GUI</strong><br>
-             Developed a Java GUI that profiles and visualizes performance of arrays, linked lists, and BSTs, streamlining HR data-workflow optimization.</div>
-      </div>
+      <div class="flex-row"><div class="date">Oct – Nov 2024</div><div><strong>Data-Structure GUI</strong><br>
+           Developed a Java GUI that profiles and visualizes performance of arrays, linked lists, and BSTs, streamlining HR data-workflow optimization.</div></div>
 
-      <div class="flex-row">
-        <div class="date">May – Sep 2023</div>
-        <div><strong>Package-Box Object Detection</strong><br>
-             Led logistics object-detection with YOLOv5 + DINO Transformer, gaining 7.5 pp accuracy via domain-specific augmentation, TTA, and WBF.</div>
-      </div>
+      <div class="flex-row"><div class="date">May – Sep 2023</div><div><strong>Package-Box Object Detection</strong><br>
+           Led logistics object-detection with YOLOv5 + DINO Transformer, gaining 7.5 pp accuracy via domain-specific augmentation, TTA, and WBF.</div></div>
 
-      <div class="flex-row">
-        <div class="date">Feb – Dec 2022</div>
-        <div><strong>Marionette Servo-Motor Control System</strong><br>
-             Designed a servo-motor marionette by analysing DOFs and achieved real-time gesture replication using Kinect-based 3D skeleton tracking.</div>
-      </div>
+      <div class="flex-row"><div class="date">Feb – Dec 2022</div><div><strong>Marionette Servo-Motor Control System</strong><br>
+           Designed a servo-motor marionette by analysing degrees of freedom and achieved real-time gesture replication using Kinect-based 3D skeleton tracking.</div></div>
     </div>
+
+    <!-- Publications & Presentations -->
+    <h2>Publications &amp; Presentations</h2>
+    <ul>
+      <li>Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em> Submitted to Biomedical Engineering Society (BMES) Annual Meeting 2025.</li>
+    </ul>
 
     <!-- Teaching Experience -->
     <h2>Teaching Experience</h2>
     <div class="flex-col">
-      <div class="flex-row"><div class="date">Jan 2025 – Present</div><div><strong>TA, Intro to Advanced Studies II, Illinois Institute of Technology</strong><br>Led assembly (MIPS/QtSpim) and C-programming labs, providing individualized feedback and assessment.</div></div>
-      <div class="flex-row"><div class="date">Jan – Jun 2025</div><div><strong>TA, Intro to Advanced Studies I, Illinois Institute of Technology</strong><br>Guided graduate labs in Java, data structures, and algorithms; delivered detailed, personalized feedback.</div></div>
-      <div class="flex-row"><div class="date">Mar – Jun 2023</div><div><strong>TA, Software Application, Seoul National University of Science and Technology</strong><br>Supervised C/C++ programming exams and provided one-on-one mentoring to improve proficiency.</div></div>
+      <div class="flex-row"><div class="date">Jan 2025 – Present</div><div><strong>TA, Intro to Advanced Studies II, IIT</strong><br>Led MIPS/QtSpim assembly and C-programming labs, providing individualized feedback and assessment.</div></div>
+      <div class="flex-row"><div class="date">Jan – Jun 2025</div><div><strong>TA, Intro to Advanced Studies I, IIT</strong><br>Guided graduate labs in Java, data structures, and algorithms; delivered detailed, personalized feedback.</div></div>
+      <div class="flex-row"><div class="date">Mar – Jun 2023</div><div><strong>TA, Software Application, SeoulTech</strong><br>Supervised C/C++ exams and provided one-on-one mentoring to enhance proficiency.</div></div>
     </div>
 
     <!-- Honors & Awards -->
-    <h2>Honors & Awards</h2>
+    <h2>Honors &amp; Awards</h2>
     <div class="flex-col">
       <div class="flex-row"><div class="date">2025</div><div>Marshal Honor – Illinois Institute of Technology Commencement</div></div>
       <div class="flex-row"><div class="date">2024</div><div>Graduate Pathways Scholarship – Illinois Institute of Technology</div></div>
@@ -149,7 +136,7 @@
     <h2>Technical Skills</h2>
     <ul>
       <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
-      <li><strong>Frameworks & Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
+      <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
       <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA</li>
     </ul>
 
