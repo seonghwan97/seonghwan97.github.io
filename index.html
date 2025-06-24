@@ -31,50 +31,144 @@
 
     <!-- Intro -->
     <p>
-      My name is Seonghwan Lim. I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT). I hold a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
+      My name is Seonghwan Lim. I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology (IIT).
+      I hold a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
     </p>
 
     <!-- Research Interests -->
     <h2>Research Interests</h2>
     <p>
-      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world. My current projects include:
+      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world.
+      My current projects include:
     </p>
-
     <ul>
-      <li>
-        Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).
-      </li>
-      <li>
-        Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.
-      </li>
-      <li>
-        Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.
-      </li>
+      <li>Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).</li>
+      <li>Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.</li>
+      <li>Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.</li>
     </ul>
-
-    <p>
-      Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.
-    </p>
+    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.</p>
 
     <!-- Education -->
     <h2>Education</h2>
     <div class="flex-col">
       <div class="flex-row">
-        <div class="date">May&nbsp;2026</div>
-        <div>
-          <strong>M.S. in Computer Science</strong><br>
-          Illinois Institute of Technology — GPA&nbsp;4.0/4.0
+        <div class="date">May 2026</div>
+        <div><strong>M.S. in Computer Science</strong><br>Illinois Institute of Technology — GPA 4.0/4.0</div>
+      </div>
+      <div class="flex-row">
+        <div class="date">Aug 2023</div>
+        <div><strong>B.S. in Electrical &amp; Information Engineering</strong><br>Seoul National University of Science &amp; Technology</div>
+      </div>
+    </div>
+
+    <!-- Research Experience -->
+    <h2>Research Experience</h2>
+    <div class="flex-col">
+      <div class="flex-row">
+        <div class="date">Feb 2025 – Present</div>
+        <div><strong>Research Assistant, Department of Electrical and Computer Engineering, Illinois Institute of Technology (PI: Prof. Joohee Kim)</strong><br>
+          Developed an EfficientNet-B0 pipeline for classifying road-surface conditions on the RSCD dataset, improving accuracy from 88.9 % to 92.7 % by addressing class imbalance.
+          Enhanced synthetic-image realism (FID 100.96 → 56.49) by optimizing DreamBooth-LoRA training parameters and prompts.
         </div>
       </div>
 
       <div class="flex-row">
-        <div class="date">Aug&nbsp;2023</div>
-        <div>
-          <strong>B.S. in Electrical &amp; Information Engineering</strong><br>
-          Seoul National University of Science &amp; Technology
+        <div class="date">Jan 2025 – Present</div>
+        <div><strong>Research Assistant, Department of Computer Science, Illinois Institute of Technology (PI: Prof. Gady Agam)</strong><br>
+          Built a multi-view 3D pose-estimation pipeline with synchronized five-camera input, surpassing MediaPipe accuracy by combining AlphaPose keypoints with MotionBERT.
+          Currently extending the system with transformer-based models for energy-expenditure prediction.
         </div>
       </div>
 
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div><strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Abhinav Bhushan)</strong><br>
+          Quantified fluid-concentration fields from images and modeled their relation to inlet velocities in microfluidic devices.
+          Simulated 100 three-channel flow scenarios in ANSYS Fluent and achieved 0.0413 µm/s RMSE using Support Vector Regression.
+          Abstract submitted to BMES 2025.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan – Jun 2025</div>
+        <div><strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Keigo Kawaji)</strong><br>
+          Performed structural analysis and segmentation of brain MRI scans with ITK-SNAP and developed linear-regression models to predict cranial-implant shifts at 30- and 90-day follow-ups.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan – Dec 2023</div>
+        <div><strong>Research Assistant, Department of Electrical and Information Engineering, Seoul National University of Science and Technology (Advisor: Prof. Yeejin Lee)</strong><br>
+          Conducted package-box object-detection research using YOLOv5 and DINO Transformer, boosting accuracy by 7.5 pp via domain-specific augmentation, TTA, and WBF, and implemented knowledge-distillation for class-incremental learning.
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <div class="flex-col">
+      <div class="flex-row">
+        <div class="date">Apr – Jun 2025</div>
+        <div>Implemented a transformer model that predicts head yaw, pitch, and roll from Mediapipe facial keypoints on the BIWI dataset and integrated real-time webcam inference with Unity to create a semi-immersive VR environment controlled by head movement.</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Feb – Jun 2025</div>
+        <div>Developed an AI-generated-text detection system using logistic regression, linear regression, and Naïve Bayes classifiers on synthetic and human-written corpora.</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Oct – Nov 2024</div>
+        <div>Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) framework for class-incremental learning and improved accuracy from 39 % to 49 % on CIFAR-10 and from 44 % to 59 % on MNIST by incorporating knowledge distillation.</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Oct – Nov 2024</div>
+        <div>Built a Java GUI tool that profiles and visualizes the performance of arrays, linked lists, and binary search trees to support HR data-workflow optimization.</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">May – Sep 2023</div>
+        <div>Led an object-detection project for logistics using YOLOv5 and DINO Transformer, achieving a 7.5 pp accuracy gain with domain-specific augmentation, TTA, and WBF.</div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Feb – Dec 2022</div>
+        <div>Designed a servo-motor marionette system by analysing degrees of freedom and realised real-time gesture replication with Kinect-based 3D skeleton tracking.</div>
+      </div>
+    </div>
+
+    <!-- Teaching Experience -->
+    <h2>Teaching Experience</h2>
+    <div class="flex-col">
+      <div class="flex-row">
+        <div class="date">Jan 2025 – Present</div>
+        <div><strong>Teaching Assistant, Introduction to Advanced Studies II, College of Computing, IIT</strong><br>
+          Led labs on MIPS/QtSpim assembly and introductory C programming, encouraged active engagement, and provided individualized feedback on assessments.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Jan – Jun 2025</div>
+        <div><strong>Teaching Assistant, Introduction to Advanced Studies I, College of Computing, IIT</strong><br>
+          Conducted graduate labs in Java, data structures, and algorithms, emphasizing problem-solving and critical thinking, and delivered detailed personalized feedback.
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="date">Mar – Jun 2023</div>
+        <div><strong>Teaching Assistant, Software Application, Seoul National University of Science and Technology</strong><br>
+          Supervised exams and assignments in C/C++ programming courses, ensuring academic fairness and offering one-on-one mentoring to enhance proficiency.
+        </div>
+      </div>
+    </div>
+
+    <!-- Honors & Awards -->
+    <h2>Honors & Awards</h2>
+    <div class="flex-col">
+      <div class="flex-row"><div class="date">2025</div><div>Marshal Honor – Illinois Institute of Technology Commencement</div></div>
+      <div class="flex-row"><div class="date">2024</div><div>Graduate Pathways Scholarship – Illinois Institute of Technology</div></div>
+      <div class="flex-row"><div class="date">2023</div><div>1st Prize – 2023 CJ Logistics Future Technology Challenge ($15 k)</div></div>
     </div>
 
     <!-- Technical Skills -->
@@ -85,38 +179,11 @@
       <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA</li>
     </ul>
 
-    <!-- Honors & Awards -->
-    <h2>Honors & Awards</h2>
-    <div class="flex-col">
-      <div class="flex-row">
-        <div class="date">2025</div>
-        <div>
-          Marshal Honor – Illinois Institute of Technology Commencement
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">2024</div>
-        <div>
-          Graduate Pathways Scholarship – Illinois Institute of Technology
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">2023</div>
-        <div>
-          1st Prize – 2023 CJ Logistics Future Technology Challenge ($15 k)
-        </div>
-      </div>
-
-    </div>
-
   </div>
 
   <!-- Sidebar -->
   <div style="flex:1; min-width:200px;">
-    <img src="./images/headshot.png" alt="Seonghwan Lim headshot"
-         style="width:100%; max-width:300px; border-radius:5%; margin-bottom:10px;">
+    <img src="./images/headshot.png" alt="Seonghwan Lim headshot" style="width:100%; max-width:300px; border-radius:5%; margin-bottom:10px;">
     <div style="display:flex; gap:10px;">
       <a href="mailto:slim24@hawk.iit.edu"><img src="./images/email.png" alt="Email" style="width:50px;"></a>
       <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn" style="width:50px;"></a>
@@ -125,5 +192,6 @@
   </div>
 
 </div>
+
 </body>
 </html>
