@@ -38,14 +38,16 @@
     <!-- Research Interests -->
     <h2>Research Interests</h2>
     <p>
-      My primary research interests lie in <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus on developing visual perception systems that interact intelligently with the real world. My current projects include:
+      My research interests lie at the intersection of <strong>computer vision</strong> and <strong>machine learning</strong>, with a focus on <strong>human–object interaction</strong>, <strong>interactive 3D perception</strong>, and <strong>hardware–algorithm co-design</strong>. Specifically, I aim to develop robust models that integrate learning algorithms with hardware optimization, enabling advanced applications in robotics and intelligent interactive systems.
     </p>
     <ul>
-      <li>Analyzing road surface conditions for robust visual recognition tasks (e.g., classifying dry, wet, and flooded conditions; differentiating asphalt and concrete surfaces; detecting cracks and assessing smoothness).</li>
-      <li>Extracting 3D human poses in XR environments to estimate the energy expenditure associated with various human activities.</li>
-      <li>Capturing and quantifying mixing behaviors within microfluidic devices, developing predictive models to precisely control fluid mixtures.</li>
+      <li>Developing visual recognition and perception models for dynamic human–object interactions.</li>
+      <li>Advancing interactive 3D perception for embodied AI and XR applications.</li>
+      <li>Designing hardware–algorithm co-optimization strategies to achieve efficient, real-time perception.</li>
     </ul>
-    <p>Ultimately, I aspire to leverage advanced visual perception to enable dynamic and responsive interactions in complex real-world scenarios.</p>
+    <p>
+      Ultimately, I aspire to leverage these approaches to enable dynamic, intelligent, and responsive interactions in complex real-world environments.
+    </p>
 
     <!-- Education -->
     <h2>Education</h2>
@@ -63,41 +65,64 @@
     <!-- Research Experience -->
     <h2>Research Experience</h2>
     <div class="flex-col">
+    
       <div class="flex-row">
         <div class="date">Feb 2025 – Present</div>
-        <div><strong>Department of Electrical and Computer Engineering, Illinois Institute of Technology (PI: Prof. Joohee Kim)</strong><br>
-          Developed an EfficientNet-B0 pipeline for road-surface classification (RSCD) raising accuracy 88.9 % → 92.7 % and reduced FID 100.96 → 56.49 via DreamBooth-LoRA tuning.
+        <div>
+          <strong>Research Assistant, Department of Electrical and Computer Engineering, Illinois Institute of Technology (PI: Prof. Joohee Kim)</strong><br>
+          <ul>
+            <li>Developed an EfficientNet-B0-based pipeline for classifying road surface conditions (RSCD dataset), increasing accuracy from 88.9% to 92.7% by addressing class imbalance.</li>
+            <li>Improved performance on a long-tailed image classification dataset by systematically comparing augmentation strategies, transfer learning approaches, metric learning techniques, and class-rebalancing methods (e.g., classifier re-training).</li>
+          </ul>
         </div>
       </div>
-
+    
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Department of Computer Science, Illinois Institute of Technology (PI: Prof. Gady Agam)</strong><br>
-          Built a five-camera 3D-pose pipeline (AlphaPose + MotionBERT) outperforming MediaPipe; extending to transformer-based energy-expenditure prediction.
+        <div>
+          <strong>Research Assistant, Department of Computer Science, Illinois Institute of Technology (PI: Prof. Gady Agam)</strong><br>
+          <ul>
+            <li>Built a multi-view 3D human pose estimation pipeline integrating synchronized data from five cameras, significantly improving accuracy over previous MediaPipe methods.</li>
+            <li>Enhanced accuracy by combining AlphaPose-extracted 2D keypoints with MotionBERT, and extended the pipeline to transformer-based energy expenditure (EE) prediction for investigating associations between EE and cognitive scores (spatial ability, working memory capacity).</li>
+          </ul>
         </div>
       </div>
-
+    
       <div class="flex-row">
         <div class="date">Jan 2025 – Present</div>
-        <div><strong>Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Abhinav Bhushan)</strong><br>
-          Quantified concentration fields and modelled their relation to inlet velocities (RMSE 0.041 µm/s on 100 ANSYS simulations).
+        <div>
+          <strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Abhinav Bhushan)</strong><br>
+          <ul>
+            <li>Quantified fluid concentrations from image data and modeled their relationships with input velocities in microfluidic devices.</li>
+            <li>Simulated and evaluated three-channel microfluidic flow conditions (100 scenarios) using ANSYS Fluent; achieved prediction RMSE of 0.0413 µm/s via Support Vector Regression.</li>
+          </ul>
         </div>
       </div>
-
+    
       <div class="flex-row">
         <div class="date">Jan – Jun 2025</div>
-        <div><strong>Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Keigo Kawaji)</strong><br>
-          Segmented brain MRI scans (ITK-SNAP) and built linear models to predict cranial-implant shifts at 30 & 90 days.
+        <div>
+          <strong>Research Assistant, Department of Biomedical Engineering, Illinois Institute of Technology (Advisor: Prof. Keigo Kawaji)</strong><br>
+          <ul>
+            <li>Performed structural analysis and segmentation labeling on brain MRI scans using ITK-SNAP.</li>
+            <li>Developed linear regression models to predict future cranial implant positions based on segmented MRI data at multiple follow-up intervals.</li>
+          </ul>
         </div>
       </div>
-
+    
       <div class="flex-row">
         <div class="date">Jan – Dec 2023</div>
-        <div><strong>Department of Electrical and Information Engineering, Seoul National University of Science and Technology (Advisor: Prof. Yeejin Lee)</strong><br>
-          Boosted package-box detection by 7.5 pp with YOLOv5 + DINO and domain-specific augmentations; implemented knowledge distillation for continual learning.
+        <div>
+          <strong>Research Assistant, Department of Electrical and Information Engineering, Seoul National University of Science and Technology (Advisor: Prof. Yeejin Lee)</strong><br>
+          <ul>
+            <li>Conducted object detection research for package box identification using YOLOv5 and DINO Transformer, achieving a 7.5% accuracy boost with domain-specific augmentation, TTA, and WBF.</li>
+            <li>Implemented knowledge distillation approaches to enhance class-incremental learning.</li>
+          </ul>
         </div>
       </div>
+    
     </div>
+
 
     <!-- Projects -->
     <h2>Projects</h2>
@@ -124,15 +149,72 @@
     <!-- Publications & Presentations -->
     <h2>Publications &amp; Presentations</h2>
     <ul>
-      <li>Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em> Submitted to Biomedical Engineering Society Annual Meeting 2025.</li>
+      <li>Kim, J., &amp; Lim, S. (2026). <em>“Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions.”</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
+      <li>Lim, S., Liu, X., Amadi, L., Bauer, K., Mutis, I., &amp; Agam, G. (2025). <em>“Exploring Links Between Embodied Effort and Spatial Ability for Problem Solving in Mixed Reality.”</em> Submitted for review to CHI 2026 (ACM Conference on Human Factors in Computing Systems).</li>
+      <li>Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em> Biomedical Engineering Society (BMES) Annual Meeting 2025.</li>
+      <li>Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>“Development of Marionette Motion Control System.”</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
     </ul>
+
 
     <!-- Teaching Experience -->
     <h2>Teaching Experience</h2>
     <div class="flex-col">
-      <div class="flex-row"><div class="date">Jan 2025 – Present</div><div><strong>TA, Intro to Advanced Studies II, Illinois Institute of Technology</strong><br>Led MIPS/QtSpim assembly and C-programming labs, providing individualized feedback and assessment.</div></div>
-      <div class="flex-row"><div class="date">Jan – Jun 2025</div><div><strong>TA, Intro to Advanced Studies I, Illinois Institute of Technology</strong><br>Guided graduate labs in Java, data structures, and algorithms; delivered detailed, personalized feedback.</div></div>
-      <div class="flex-row"><div class="date">Mar – Jun 2023</div><div><strong>TA, Software Application, Seoul National University of Science and Technology</strong><br>Supervised C/C++ exams and provided one-on-one mentoring to enhance proficiency.</div></div>
+    
+      <div class="flex-row">
+        <div class="date">Aug 2025 – Present</div>
+        <div>
+          <strong>Teaching Assistant, Introduction to Algorithms, College of Computing, Illinois Institute of Technology</strong><br>
+          <ul>
+            <li>Graded assignments and exams on core algorithms (e.g., merge sort, greedy algorithms, dynamic programming).</li>
+            <li>Assisted students during office hours by answering questions and reinforcing algorithm design and analysis concepts.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="flex-row">
+        <div class="date">Jan – Aug 2025</div>
+        <div>
+          <strong>Teaching Assistant, Introduction to Advanced Studies II, College of Computing, Illinois Institute of Technology</strong><br>
+          <ul>
+            <li>Conducted lab sessions on Assembly Language (MIPS, QtSpim) and introductory C programming.</li>
+            <li>Managed assessments and provided individualized technical feedback on students' programming assignments.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="flex-row">
+        <div class="date">Jan – Jun 2025</div>
+        <div>
+          <strong>Teaching Assistant, Introduction to Advanced Studies I, College of Computing, Illinois Institute of Technology</strong><br>
+          <ul>
+            <li>Led graduate-level lab sessions on Java programming, data structures, and algorithms.</li>
+            <li>Provided detailed and personalized assessment feedback to support skill improvement and learning progress.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="flex-row">
+        <div class="date">Jun – Aug 2023</div>
+        <div>
+          <strong>Workshop Instructor, Object Detection with YOLOv5, College of Information and Communication Engineering, Seoul National University of Science and Technology</strong><br>
+          <ul>
+            <li>Conducted practical lab sessions introducing undergraduate students to deep learning-based object detection techniques (YOLOv5).</li>
+            <li>Provided instruction on fine-tuning, optimization methods, and performance evaluation for YOLOv5 models.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="flex-row">
+        <div class="date">Mar – Jun 2023</div>
+        <div>
+          <strong>Teaching Assistant, Software Application, College of Information and Communication Engineering, Seoul National University of Science and Technology</strong><br>
+          <ul>
+            <li>Supervised undergraduate coursework and examinations in Software Programming (C/C++).</li>
+            <li>Provided individualized mentoring and technical assistance on C/C++ programming concepts.</li>
+          </ul>
+        </div>
+      </div>
+    
     </div>
 
     <!-- Honors & Awards -->
