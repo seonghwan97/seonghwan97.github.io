@@ -2,84 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seonghwan Lim – Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; line-height:1.6; color:#222; }
-    h1, h2 { margin:20px 0 10px 0; }
-    a { text-decoration:none; color:#666; }
-    a:hover { color:#000; }
-    .date { flex:0 0 140px; font-weight:bold; color:#666; }
-    .flex-col { display:flex; flex-direction:column; gap:20px; margin-top:10px; }
-    .flex-row { display:flex; align-items:flex-start; gap:20px; }
-    ul { margin:5px 0 15px 20px; padding-left: 0; }
+    /* CSS Variables for Theme */
+    :root {
+      --bg-color: #f4f7f6;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --border-color: #e2e8f0;
+    }
+
+    /* Reset & Global Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 20px;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+    a:hover { color: var(--primary-hover); text-decoration: underline; }
+    h1, h2, h3 { color: #0f172a; margin-bottom: 15px; }
+    ul { margin-left: 20px; margin-bottom: 15px; padding-left: 0; }
+    li { margin-bottom: 8px; }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    /* Sidebar (Profile) */
+    .sidebar {
+      flex: 1;
+      min-width: 280px;
+      max-width: 300px;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 20px;
+      text-align: center;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%; /* Make image circular */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+    .sidebar h1 { font-size: 1.8rem; margin-bottom: 5px; }
+    .sidebar p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .social-links img {
+      width: 35px;
+      transition: transform 0.2s ease;
+    }
+    .social-links a:hover img { transform: scale(1.1); }
+
+    /* Main Content */
+    .main-content {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Timeline & Experience Items */
+    .experience-item {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .experience-item:last-child { margin-bottom: 0; }
+    .date-badge {
+      flex: 0 0 130px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding-top: 2px;
+    }
+    .content-box strong {
+      color: #0f172a;
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 850px) {
+      .container { flex-direction: column; align-items: stretch; }
+      .sidebar { position: static; max-width: 100%; margin-bottom: 20px; }
+      .experience-item { flex-direction: column; gap: 5px; }
+      .date-badge { flex: auto; color: var(--primary-color); }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Banner -->
-<div style="background:#f9f9f9; padding:20px;">
-  <h1>Seonghwan Lim</h1>
-  <p>
-    <a href="https://www.iit.edu/computer-science" target="_blank">Computer Science,</a>
-    <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a> · Chicago, IL
-  </p>
-</div>
+<div class="container">
 
-<div style="display:flex; flex-wrap:wrap; gap:20px; padding:20px;">
-
-  <!-- Main Content -->
-  <div style="flex:2; max-width:860px;">
-
-    <!-- Intro -->
+  <aside class="sidebar">
+    <img src="./images/headshot.png" alt="Seonghwan Lim headshot" class="profile-img">
+    <h1>Seonghwan Lim</h1>
     <p>
-      My name is Seonghwan Lim, and I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology.
-      I previously earned a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
-      My work spans computer vision, embodied sensing, and intelligent systems, with research experience in road-surface recognition, human pose estimation,
-      energy expenditure modeling, microfluidic video analysis, and vision-based interactive systems.
+      M.S. in Computer Science<br>
+      <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a><br>
+      Chicago, IL
     </p>
-
-    <!-- Research Interests -->
-    <h2>Research Interests</h2>
-    <p>
-      My research interests lie in <strong>computer vision</strong>, <strong>multimodal sensing</strong>, and <strong>intelligent interactive systems</strong>.
-      I am particularly interested in building systems that extract meaningful signals from visual and sensor data and use them for prediction, interpretation,
-      and real-time adaptation in complex environments.
-    </p>
-
-    <ul>
-      <li>Vision-based modeling for fine-grained and real-world recognition problems, including long-tailed and challenging visual datasets.</li>
-      <li>Human-centered perception systems that estimate pose, movement, energy expenditure, and cognitive or behavioral state from multi-camera or monocular inputs.</li>
-      <li>Real-time embodied and spatially aware systems that connect perception, visualization, and control.</li>
-      <li>Practical machine learning pipelines that combine robust data processing, feature extraction, predictive modeling, and deployment-oriented system design.</li>
-    </ul>
-
-    <p>
-      More broadly, I aim to develop intelligent systems that bridge perception and decision-making, especially in settings where human behavior, physical environments,
-      and real-time feedback need to be jointly understood.
-    </p>
-
-    <!-- Education -->
-    <h2>Education</h2>
-    <div class="flex-col">
-      <div class="flex-row">
-        <div class="date">May 2026</div>
-        <div><strong>M.S. in Computer Science</strong><br>Illinois Institute of Technology — GPA 4.0/4.0</div>
-      </div>
-      <div class="flex-row">
-        <div class="date">Aug 2023</div>
-        <div><strong>B.S. in Electrical and Information Engineering</strong><br>Seoul National University of Science and Technology</div>
-      </div>
+    <div class="social-links">
+      <a href="mailto:slim24@hawk.iit.edu" title="Email"><img src="./images/email.png" alt="Email"></a>
+      <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" title="LinkedIn"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://github.com/seonghwan97" target="_blank" title="GitHub"><img src="./images/git.png" alt="GitHub"></a>
     </div>
+  </aside>
 
-    <!-- Research Experience -->
-    <h2>Research Experience</h2>
-    <div class="flex-col">
+  <main class="main-content">
 
-      <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
-        <div>
-          <strong>Research Assistant, MMCom Lab, Illinois Institute of Technology</strong><br>
+    <section class="card">
+      <h2>About Me</h2>
+      <p>
+        My name is Seonghwan Lim, and I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology.
+        I previously earned a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
+        My work spans computer vision, embodied sensing, and intelligent systems, with research experience in road-surface recognition, human pose estimation,
+        energy expenditure modeling, microfluidic video analysis, and vision-based interactive systems.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Research Interests</h2>
+      <p style="margin-bottom: 15px;">
+        My research interests lie in <strong>computer vision</strong>, <strong>multimodal sensing</strong>, and <strong>intelligent interactive systems</strong>.
+        I am particularly interested in building systems that extract meaningful signals from visual and sensor data and use them for prediction, interpretation,
+        and real-time adaptation in complex environments.
+      </p>
+      <ul>
+        <li>Vision-based modeling for fine-grained and real-world recognition problems, including long-tailed and challenging visual datasets.</li>
+        <li>Human-centered perception systems that estimate pose, movement, energy expenditure, and cognitive or behavioral state from multi-camera or monocular inputs.</li>
+        <li>Real-time embodied and spatially aware systems that connect perception, visualization, and control.</li>
+        <li>Practical machine learning pipelines that combine robust data processing, feature extraction, predictive modeling, and deployment-oriented system design.</li>
+      </ul>
+      <p>
+        More broadly, I aim to develop intelligent systems that bridge perception and decision-making, especially in settings where human behavior, physical environments,
+        and real-time feedback need to be jointly understood.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Education</h2>
+      <div class="experience-item">
+        <div class="date-badge">May 2026</div>
+        <div class="content-box">
+          <strong>M.S. in Computer Science</strong>
+          Illinois Institute of Technology — GPA 4.0/4.0
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="date-badge">Aug 2023</div>
+        <div class="content-box">
+          <strong>B.S. in Electrical and Information Engineering</strong>
+          Seoul National University of Science and Technology
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Research Experience</h2>
+      
+      <div class="experience-item">
+        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="content-box">
+          <strong>Research Assistant, MMCom Lab, Illinois Institute of Technology</strong>
           <ul>
             <li>Conducted research on the RSCD road-surface dataset, addressing its long-tailed, fine-grained, and three-group structural characteristics.</li>
             <li>Designed and evaluated dataset-specific strategies including multi-task learning, consistency learning, augmentation, resampling, mixture-of-experts, and diffusion-based sample generation.</li>
@@ -89,44 +225,39 @@
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
-        <div>
-          <strong>Research Assistant, iConSenSe Lab, Illinois Institute of Technology</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="content-box">
+          <strong>Research Assistant, iConSenSe Lab, Illinois Institute of Technology</strong>
           <ul>
             <li>Built a real-time multi-camera perception pipeline using four Jetson Orin Nano devices and lightweight cameras for robust human pose estimation in indoor environments.</li>
             <li>Integrated multi-camera inputs with pose detection and 2D homography-based localization to estimate subject position, motion, and spatial behavior in closed spaces.</li>
             <li>Developed a visualization system combining spatial maps and heatmaps to analyze where participants move and expend energy over time.</li>
             <li>Designed and installed a real-time CO2 sensing setup using SenseAir K30 FR sensors and Raspberry Pi devices to validate behavior-related environmental changes.</li>
             <li>Contributed to a human-centered HVAC system concept that links human activity patterns to temperature and ventilation control.</li>
-            <li>Presented the integrated system to visiting industry representatives.</li>
             <li>Also conducted research on 3D human pose and energy expenditure estimation from mixed reality experiment data involving safety training and performance assessment.</li>
             <li>Used MotionBERT-based 3D pose extraction and trained a model on the E3V-K5 benchmark, outperforming E3SFormer in MRE, MAE, PCC, and R² for energy expenditure prediction.</li>
-            <li>Analyzed associations among energy expenditure, performance score, spatial ability, working memory capacity, and cognitive load measures such as NASA-TLX and pupil dilation.</li>
-            <li>Presented weekly research progress to three faculty members and incorporated feedback into the experimental workflow.</li>
           </ul>
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
-        <div>
-          <strong>Independent Researcher, Bhushan Research Group, Illinois Institute of Technology</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="content-box">
+          <strong>Independent Researcher, Bhushan Research Group, Illinois Institute of Technology</strong>
           <ul>
             <li>Developed a workflow for microfluidic device video analysis that transforms noisy imaging data into quantitative signals for predictive modeling and control-related applications.</li>
             <li>Aligned videos collected under different experimental conditions into a consistent image space, applied denoising, and selected ROIs for signal extraction.</li>
-            <li>Used pixel-based visual signals as proxies for mixing rate and converted them into quantitative features.</li>
             <li>Formulated and solved a prediction problem for estimating inlet settings required to reach target mixing rates.</li>
-            <li>Trained a Support Vector Regression model and achieved RMSE of 0.0413 µmL/s.</li>
-            <li>Presented this work at the BMES 2025 Annual Meeting.</li>
+            <li>Trained a Support Vector Regression model and achieved RMSE of 0.0413 µmL/s. Presented this work at the BMES 2025 Annual Meeting.</li>
           </ul>
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Jan – Jun 2025</div>
-        <div>
-          <strong>Research Assistant, Illinois Institute of Technology</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Jan – Jun 2025</div>
+        <div class="content-box">
+          <strong>Research Assistant, Illinois Institute of Technology</strong>
           <ul>
             <li>Performed structural analysis and segmentation labeling on brain MRI scans using ITK-SNAP.</li>
             <li>Developed linear regression models to predict future cranial implant positions based on segmented MRI data at multiple follow-up intervals.</li>
@@ -134,171 +265,120 @@
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Jan – Dec 2023</div>
-        <div>
-          <strong>Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Jan – Dec 2023</div>
+        <div class="content-box">
+          <strong>Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology</strong>
           <ul>
-            <li>Supported graduate students’ research in incremental learning by organizing and comparing methods such as KL-based approaches, replay-based methods, and parameter-based methods.</li>
-            <li>Delivered weekly presentations on topics of interest, including a paper review on 3D reconstruction from 2D images.</li>
+            <li>Supported graduate students’ research in incremental learning by organizing and comparing methods.</li>
             <li>Led the CJ Logistics Challenge project on object detection for counting and identifying product boxes in logistics images.</li>
-            <li>Compared CNN-based detectors such as Faster R-CNN, YOLO, and SSD with Transformer-based approaches including ViT and DINO to identify the most effective model combination.</li>
-            <li>Systematically evaluated augmentation strategies, fine-tuning schemes, and optimization settings tailored to domain-specific visual characteristics.</li>
-            <li>Managed experiments and logs to identify the best-performing configuration.</li>
+            <li>Compared CNN-based detectors (Faster R-CNN, YOLO, SSD) with Transformer-based approaches (ViT, DINO).</li>
             <li>Won 1st Prize ($15,000) and contributed as team leader by coordinating collaboration and guiding project direction.</li>
           </ul>
         </div>
       </div>
+    </section>
 
-    </div>
-
-    <!-- Projects -->
-    <h2>Projects</h2>
-    <div class="flex-col">
-
-      <div class="flex-row">
-        <div class="date">Apr – Jun 2025</div>
-        <div>
-          <strong>Head-Tracking Semi-VR Environment</strong>
-          <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a><br>
+    <section class="card">
+      <h2>Projects</h2>
+      
+      <div class="experience-item">
+        <div class="date-badge">Apr – Jun 2025</div>
+        <div class="content-box">
+          <strong>Head-Tracking Semi-VR Environment <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a></strong>
           Implemented a transformer-based model that predicts head yaw, pitch, and roll from MediaPipe facial keypoints using the BIWI dataset, and integrated real-time webcam inference with Unity for head-controlled semi-immersive VR navigation.
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Feb – Jun 2025</div>
-        <div>
-          <strong>AI-Generated Text Detection Program</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Feb – Jun 2025</div>
+        <div class="content-box">
+          <strong>AI-Generated Text Detection Program</strong>
           Built a text detection pipeline for distinguishing AI-generated from human-written text using logistic regression, linear regression, and Naïve Bayes on mixed corpora.
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div>
-          <strong>NICE with Knowledge Distillation</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Oct – Nov 2024</div>
+        <div class="content-box">
+          <strong>NICE with Knowledge Distillation</strong>
           Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) method for class-incremental learning and improved performance from 39% to 49% on CIFAR-10 and from 44% to 59% on MNIST through knowledge distillation.
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Oct – Nov 2024</div>
-        <div>
-          <strong>Data-Structure GUI</strong><br>
-          Developed a Java GUI that profiles and visualizes the performance of arrays, linked lists, and binary search trees.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Jan – Dec 2022</div>
-        <div>
-          <strong>Marionette Servo-Motor Control System</strong>
-          <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a><br>
+      <div class="experience-item">
+        <div class="date-badge">Jan – Dec 2022</div>
+        <div class="content-box">
+          <strong>Marionette Servo-Motor Control System <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a></strong>
           Designed a marionette control system using servo motors and strings, and built a pipeline in which RGB-D human pose captured by Kinect is translated into motor control for real-time motion imitation.
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Mar – Apr 2023</div>
-        <div>
-          <strong>Interior Defect Construction-Related Image Classification Competition</strong><br>
-          Participated in an image classification competition involving interior defect and damage-like image data, gaining hands-on experience with real-world construction-related visual datasets.
-        </div>
-      </div>
-
-      <div class="flex-row">
-        <div class="date">Personal Project</div>
-        <div>
-          <strong>Gemini API + RSS + Zotero Literature Automation</strong><br>
+      <div class="experience-item">
+        <div class="date-badge">Personal Project</div>
+        <div class="content-box">
+          <strong>Gemini API + RSS + Zotero Literature Automation</strong>
           Built a personal literature monitoring and organization workflow that collects newly released papers through RSS feeds, summarizes them with Gemini API, and stores the outputs into Zotero for structured review and tracking.
         </div>
       </div>
+    </section>
 
-    </div>
+    <section class="card">
+      <h2>Publications &amp; Presentations</h2>
+      <ul>
+        <li>Kim, J., &amp; Lim, S. (2026). <em>“Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions.”</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
+        <li>
+          Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
+          Biomedical Engineering Society (BMES) Annual Meeting 2025.
+          <a href="/assets/bmes2025/poster.pdf" target="_blank">[poster]</a>
+          <a href="/assets/bmes2025/photo1.jpg" target="_blank">[photo_1]</a>
+          <a href="/assets/bmes2025/photo2.jpg" target="_blank">[photo_2]</a>
+        </li>
+        <li>Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>“Development of Marionette Motion Control System.”</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
+      </ul>
+    </section>
 
-    <!-- Publications & Presentations -->
-    <h2>Publications &amp; Presentations</h2>
-    <ul>
-      <li>Kim, J., &amp; Lim, S. (2026). <em>“Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions.”</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
-      <li>
-        Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
-        Biomedical Engineering Society (BMES) Annual Meeting 2025.
-        <a href="/assets/bmes2025/poster.pdf" target="_blank">[poster]</a>
-        <a href="/assets/bmes2025/photo1.jpg" target="_blank">[photo_1]</a>
-        <a href="/assets/bmes2025/photo2.jpg" target="_blank">[photo_2]</a>
-      </li>
-      <li>Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>“Development of Marionette Motion Control System.”</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
-    </ul>
-
-    <!-- Teaching Experience -->
-    <h2>Teaching Experience</h2>
-    <div class="flex-col">
-
-      <div class="flex-row">
-        <div class="date">Jan 2025 – Present</div>
-        <div>
+    <section class="card">
+      <h2>Teaching Experience</h2>
+      <div class="experience-item">
+        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="content-box">
           <strong>Teaching Assistant, College of Computing, Illinois Institute of Technology</strong><br>
-          <ul>
-            <li>Supported courses including <em>Introduction to Advanced Studies I</em>, <em>Introduction to Advanced Studies II</em>, and <em>Introduction to Algorithms</em>.</li>
-            <li>Led lab sessions covering Java, C programming, MIPS assembly, data structures, and core algorithmic concepts.</li>
-            <li>Graded assignments and exams, managed assessments, and provided individualized technical feedback to help students strengthen programming and problem-solving skills.</li>
-            <li>Assisted students during office hours by reinforcing concepts in programming, algorithm design, and analysis.</li>
-          </ul>
+          Supported courses including Introduction to Advanced Studies I & II, and Algorithms. Led lab sessions covering Java, C, MIPS assembly, and data structures.
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="date-badge">Jun – Aug 2023</div>
+        <div class="content-box">
+          <strong>Workshop Instructor, Object Detection with YOLOv5, Seoul Tech</strong><br>
+          Conducted practical lab sessions introducing undergraduate students to deep learning-based object detection with YOLOv5.
         </div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Jun – Aug 2023</div>
-        <div>
-          <strong>Workshop Instructor, Object Detection with YOLOv5, Seoul National University of Science and Technology</strong><br>
-          <ul>
-            <li>Conducted practical lab sessions introducing undergraduate students to deep learning-based object detection with YOLOv5.</li>
-            <li>Provided instruction on fine-tuning, optimization methods, and model performance evaluation.</li>
-          </ul>
-        </div>
+      <h2 style="margin-top: 30px;">Honors &amp; Awards</h2>
+      <div class="experience-item" style="margin-bottom: 10px;">
+        <div class="date-badge">2025</div>
+        <div class="content-box">Marshal Honor – Illinois Institute of Technology Commencement</div>
+      </div>
+      <div class="experience-item" style="margin-bottom: 10px;">
+        <div class="date-badge">2024</div>
+        <div class="content-box">Graduate Pathways Scholarship – Illinois Institute of Technology</div>
+      </div>
+      <div class="experience-item" style="margin-bottom: 10px;">
+        <div class="date-badge">2023</div>
+        <div class="content-box">1st Prize – 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
       </div>
 
-      <div class="flex-row">
-        <div class="date">Mar – Jun 2023</div>
-        <div>
-          <strong>Teaching Assistant, Software Application, Seoul National University of Science and Technology</strong><br>
-          <ul>
-            <li>Supervised undergraduate coursework and examinations in software programming using C/C++.</li>
-            <li>Provided individualized mentoring and technical assistance on programming concepts and assignments.</li>
-          </ul>
-        </div>
-      </div>
+      <h2 style="margin-top: 30px;">Technical Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
+        <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
+        <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA, ANSYS Fluent, ITK-SNAP, Unity</li>
+      </ul>
+    </section>
 
-    </div>
-
-    <!-- Honors & Awards -->
-    <h2>Honors &amp; Awards</h2>
-    <div class="flex-col">
-      <div class="flex-row"><div class="date">2025</div><div>Marshal Honor – Illinois Institute of Technology Commencement</div></div>
-      <div class="flex-row"><div class="date">2024</div><div>Graduate Pathways Scholarship – Illinois Institute of Technology</div></div>
-      <div class="flex-row"><div class="date">2023</div><div>1st Prize – 2023 CJ Logistics Future Technology Challenge ($15,000)</div></div>
-    </div>
-
-    <!-- Technical Skills -->
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
-      <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
-      <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA, ANSYS Fluent, ITK-SNAP, Unity</li>
-    </ul>
-
-  </div>
-
-  <!-- Sidebar -->
-  <div style="flex:1; min-width:220px;">
-    <img src="./images/headshot.png" alt="Seonghwan Lim headshot" style="width:100%; max-width:300px; border-radius:5%; margin-bottom:10px;">
-    <div style="display:flex; gap:10px;">
-      <a href="mailto:slim24@hawk.iit.edu"><img src="./images/email.png" alt="Email" style="width:50px;"></a>
-      <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn" style="width:50px;"></a>
-      <a href="https://github.com/seonghwan97" target="_blank"><img src="./images/git.png" alt="GitHub" style="width:50px;"></a>
-    </div>
-  </div>
-
+  </main>
 </div>
+
 </body>
 </html>
