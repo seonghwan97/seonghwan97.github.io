@@ -65,7 +65,7 @@
     .profile-img {
       width: 100%;
       max-width: 200px;
-      border-radius: 50%; /* Make image circular */
+      border-radius: 50%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-bottom: 20px;
       object-fit: cover;
@@ -185,10 +185,6 @@
         <li>Real-time embodied and spatially aware systems that connect perception, visualization, and control.</li>
         <li>Practical machine learning pipelines that combine robust data processing, feature extraction, predictive modeling, and deployment-oriented system design.</li>
       </ul>
-      <p>
-        More broadly, I aim to develop intelligent systems that bridge perception and decision-making, especially in settings where human behavior, physical environments,
-        and real-time feedback need to be jointly understood.
-      </p>
     </section>
 
     <section class="card">
@@ -217,10 +213,9 @@
         <div class="content-box">
           <strong>Research Assistant, MMCom Lab, Illinois Institute of Technology</strong>
           <ul>
-            <li>Conducted research on the RSCD road-surface dataset, addressing its long-tailed, fine-grained, and three-group structural characteristics.</li>
-            <li>Designed and evaluated dataset-specific strategies including multi-task learning, consistency learning, augmentation, resampling, mixture-of-experts, and diffusion-based sample generation.</li>
-            <li>Explored training strategies to better handle tail classes and subtle category distinctions under real-world visual variability.</li>
-            <li>Improved EfficientNet-B0 classification accuracy from 91.70% to 93.33% through a robust training workflow tailored to dataset structure.</li>
+            <li>Conducted research on the RSCD road-surface dataset to address long-tailed, fine-grained, and structural classification challenges.</li>
+            <li>Designed and evaluated training strategies including multi-task learning, mixture-of-experts, and diffusion-based sample generation.</li>
+            <li>Improved EfficientNet-B0 classification accuracy from 91.70% to 93.33% through a robust workflow tailored to dataset structure.</li>
           </ul>
         </div>
       </div>
@@ -230,13 +225,9 @@
         <div class="content-box">
           <strong>Research Assistant, iConSenSe Lab, Illinois Institute of Technology</strong>
           <ul>
-            <li>Built a real-time multi-camera perception pipeline using four Jetson Orin Nano devices and lightweight cameras for robust human pose estimation in indoor environments.</li>
-            <li>Integrated multi-camera inputs with pose detection and 2D homography-based localization to estimate subject position, motion, and spatial behavior in closed spaces.</li>
-            <li>Developed a visualization system combining spatial maps and heatmaps to analyze where participants move and expend energy over time.</li>
-            <li>Designed and installed a real-time CO2 sensing setup using SenseAir K30 FR sensors and Raspberry Pi devices to validate behavior-related environmental changes.</li>
-            <li>Contributed to a human-centered HVAC system concept that links human activity patterns to temperature and ventilation control.</li>
-            <li>Also conducted research on 3D human pose and energy expenditure estimation from mixed reality experiment data involving safety training and performance assessment.</li>
-            <li>Used MotionBERT-based 3D pose extraction and trained a model on the E3V-K5 benchmark, outperforming E3SFormer in MRE, MAE, PCC, and R² for energy expenditure prediction.</li>
+            <li>Built a real-time multi-camera perception and CO2 sensing pipeline using Jetson Orin Nanos to estimate spatial behavior and environmental changes indoors.</li>
+            <li>Developed a spatial mapping and heatmap visualization system, contributing to a human-centered HVAC concept linking activity to ventilation control.</li>
+            <li>Researched 3D human pose and energy expenditure estimation from mixed reality data, outperforming E3SFormer using a MotionBERT-based model.</li>
           </ul>
         </div>
       </div>
@@ -246,10 +237,9 @@
         <div class="content-box">
           <strong>Independent Researcher, Bhushan Research Group, Illinois Institute of Technology</strong>
           <ul>
-            <li>Developed a workflow for microfluidic device video analysis that transforms noisy imaging data into quantitative signals for predictive modeling and control-related applications.</li>
-            <li>Aligned videos collected under different experimental conditions into a consistent image space, applied denoising, and selected ROIs for signal extraction.</li>
-            <li>Formulated and solved a prediction problem for estimating inlet settings required to reach target mixing rates.</li>
-            <li>Trained a Support Vector Regression model and achieved RMSE of 0.0413 µmL/s. Presented this work at the BMES 2025 Annual Meeting.</li>
+            <li>Developed a video analysis workflow to transform noisy microfluidic device imaging data into quantitative signals for predictive modeling.</li>
+            <li>Aligned videos, applied denoising, and extracted pixel-based visual signals as proxies for estimating mixing rates.</li>
+            <li>Trained a Support Vector Regression model to predict inlet settings, achieving an RMSE of 0.0413 µmL/s (Presented at BMES 2025).</li>
           </ul>
         </div>
       </div>
@@ -260,7 +250,7 @@
           <strong>Research Assistant, Illinois Institute of Technology</strong>
           <ul>
             <li>Performed structural analysis and segmentation labeling on brain MRI scans using ITK-SNAP.</li>
-            <li>Developed linear regression models to predict future cranial implant positions based on segmented MRI data at multiple follow-up intervals.</li>
+            <li>Developed linear regression models to predict future cranial implant positions based on segmented MRI data at multiple intervals.</li>
           </ul>
         </div>
       </div>
@@ -270,10 +260,9 @@
         <div class="content-box">
           <strong>Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology</strong>
           <ul>
-            <li>Supported graduate students’ research in incremental learning by organizing and comparing methods.</li>
-            <li>Led the CJ Logistics Challenge project on object detection for counting and identifying product boxes in logistics images.</li>
-            <li>Compared CNN-based detectors (Faster R-CNN, YOLO, SSD) with Transformer-based approaches (ViT, DINO).</li>
-            <li>Won 1st Prize ($15,000) and contributed as team leader by coordinating collaboration and guiding project direction.</li>
+            <li>Supported research in incremental learning by comparing KL-based, replay-based, and parameter-based methods.</li>
+            <li>Led a team in the CJ Logistics Challenge, systematically comparing CNN-based (YOLO, Faster R-CNN) and Transformer-based (ViT, DINO) object detectors.</li>
+            <li>Won 1st Prize ($15,000) by evaluating and optimizing augmentation and fine-tuning schemes tailored to domain-specific logistics images.</li>
           </ul>
         </div>
       </div>
@@ -286,7 +275,7 @@
         <div class="date-badge">Apr – Jun 2025</div>
         <div class="content-box">
           <strong>Head-Tracking Semi-VR Environment <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a></strong>
-          Implemented a transformer-based model that predicts head yaw, pitch, and roll from MediaPipe facial keypoints using the BIWI dataset, and integrated real-time webcam inference with Unity for head-controlled semi-immersive VR navigation.
+          Implemented a transformer-based model predicting head yaw, pitch, and roll from MediaPipe keypoints, integrating webcam inference with Unity for VR navigation.
         </div>
       </div>
 
@@ -294,7 +283,7 @@
         <div class="date-badge">Feb – Jun 2025</div>
         <div class="content-box">
           <strong>AI-Generated Text Detection Program</strong>
-          Built a text detection pipeline for distinguishing AI-generated from human-written text using logistic regression, linear regression, and Naïve Bayes on mixed corpora.
+          Built a text detection pipeline distinguishing AI-generated from human-written text using logistic regression, linear regression, and Naïve Bayes.
         </div>
       </div>
 
@@ -302,7 +291,7 @@
         <div class="date-badge">Oct – Nov 2024</div>
         <div class="content-box">
           <strong>NICE with Knowledge Distillation</strong>
-          Reproduced the Neurogenesis-Inspired Contextual Encoding (NICE) method for class-incremental learning and improved performance from 39% to 49% on CIFAR-10 and from 44% to 59% on MNIST through knowledge distillation.
+          Reproduced the NICE method for class-incremental learning, improving performance on CIFAR-10 (39% to 49%) and MNIST (44% to 59%) via knowledge distillation.
         </div>
       </div>
 
@@ -310,7 +299,7 @@
         <div class="date-badge">Jan – Dec 2022</div>
         <div class="content-box">
           <strong>Marionette Servo-Motor Control System <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a></strong>
-          Designed a marionette control system using servo motors and strings, and built a pipeline in which RGB-D human pose captured by Kinect is translated into motor control for real-time motion imitation.
+          Designed a marionette control system translating RGB-D human poses captured by Kinect into servo motor control for real-time motion imitation.
         </div>
       </div>
 
@@ -318,7 +307,7 @@
         <div class="date-badge">Personal Project</div>
         <div class="content-box">
           <strong>Gemini API + RSS + Zotero Literature Automation</strong>
-          Built a personal literature monitoring and organization workflow that collects newly released papers through RSS feeds, summarizes them with Gemini API, and stores the outputs into Zotero for structured review and tracking.
+          Built a workflow collecting new papers via RSS feeds, summarizing them with the Gemini API, and storing outputs in Zotero for structured tracking.
         </div>
       </div>
     </section>
@@ -335,6 +324,18 @@
           <a href="/assets/bmes2025/photo2.jpg" target="_blank">[photo_2]</a>
         </li>
         <li>Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>“Development of Marionette Motion Control System.”</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, SQL, Java, C/C++, Bash</li>
+        <li><strong>Machine Learning:</strong> PyTorch, scikit-learn, deep learning, machine learning</li>
+        <li><strong>Computer Vision:</strong> OpenCV, YOLO, object detection, image classification, Vision Transformers</li>
+        <li><strong>Tools:</strong> Linux, Git, experiment tracking, pipeline automation</li>
+        <li><strong>Data / Analytics:</strong> data visualization, matplotlib, Excel</li>
+        <li><strong>Additional:</strong> LLM applications, real-time inference, NVIDIA Jetson Orin Nano, Raspberry Pi</li>
       </ul>
     </section>
 
@@ -368,13 +369,6 @@
         <div class="date-badge">2023</div>
         <div class="content-box">1st Prize – 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
       </div>
-
-      <h2 style="margin-top: 30px;">Technical Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> Python, Java, C/C++</li>
-        <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, OpenCV, Scikit-learn</li>
-        <li><strong>Tools:</strong> Linux (Ubuntu), Git, CUDA, ANSYS Fluent, ITK-SNAP, Unity</li>
-      </ul>
     </section>
 
   </main>
