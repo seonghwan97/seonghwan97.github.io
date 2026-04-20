@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seonghwan Lim – Portfolio</title>
-  
+  <title>Seonghwan Lim - Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* CSS Variables for Theme */
     :root {
       --bg-color: #f4f7f6;
       --card-bg: #ffffff;
@@ -21,7 +20,6 @@
       --border-color: #e2e8f0;
     }
 
-    /* Reset & Global Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
@@ -40,22 +38,22 @@
     ul { margin-left: 20px; margin-bottom: 15px; padding-left: 0; }
     li { margin-bottom: 8px; }
 
-    /* Layout */
     .container {
-      max-width: 1100px;
+      max-width: 1440px;
       margin: 0 auto;
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
+    }
+    .top-row {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 24px;
     }
 
-    /* Sidebar (Profile) */
     .sidebar {
-      flex: 1;
-      min-width: 280px;
-      max-width: 300px;
+      width: 240px;
       background: var(--card-bg);
-      padding: 30px;
+      padding: 24px;
       border-radius: 12px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       position: sticky;
@@ -64,7 +62,7 @@
     }
     .profile-img {
       width: 100%;
-      max-width: 200px;
+      max-width: 168px;
       border-radius: 50%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin-bottom: 20px;
@@ -84,24 +82,28 @@
     }
     .social-links a:hover img { transform: scale(1.1); }
 
-    /* Main Content */
     .main-content {
-      flex: 3;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
+      min-width: 0;
     }
 
-    /* Cards */
     .card {
       background: var(--card-bg);
-      padding: 40px;
+      padding: 32px;
       border-radius: 12px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card:hover {
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .intro-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .card h2 {
       font-size: 1.5rem;
@@ -110,7 +112,6 @@
       margin-bottom: 20px;
     }
 
-    /* Timeline & Experience Items */
     .experience-item {
       display: flex;
       gap: 20px;
@@ -130,13 +131,89 @@
       font-size: 1.05rem;
       margin-bottom: 5px;
     }
-    
-    /* Responsive */
+    .subsection-title {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+    .research-media-layout {
+      display: grid;
+      grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-top: 10px;
+    }
+    .media-carousel {
+      position: relative;
+      background: #000000;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .media-frame {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      background: #000000;
+      position: relative;
+    }
+    .media-frame > * {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+      background: #000000;
+    }
+    .media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .media-frame > *.is-active {
+      display: block;
+    }
+    .media-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .media-nav:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .media-nav.prev {
+      left: 12px;
+    }
+    .media-nav.next {
+      right: 12px;
+    }
+    .media-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+    }
+    .research-text ul {
+      margin-bottom: 0;
+    }
+
     @media (max-width: 850px) {
-      .container { flex-direction: column; align-items: stretch; }
-      .sidebar { position: static; max-width: 100%; margin-bottom: 20px; }
+      .top-row { grid-template-columns: 1fr; }
+      .sidebar { position: static; width: 100%; margin-bottom: 20px; }
       .experience-item { flex-direction: column; gap: 5px; }
       .date-badge { flex: auto; color: var(--primary-color); }
+      .research-media-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -144,59 +221,38 @@
 <body>
 
 <div class="container">
-
-  <aside class="sidebar">
-    <img src="./images/headshot.png" alt="Seonghwan Lim headshot" class="profile-img">
-    <h1>Seonghwan Lim</h1>
-    <p>
-      M.S. in Computer Science<br>
-      <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a><br>
-      Chicago, IL
-    </p>
-    <div class="social-links">
-      <a href="mailto:slim24@hawk.iit.edu" title="Email"><img src="./images/email.png" alt="Email"></a>
-      <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" title="LinkedIn"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://github.com/seonghwan97" target="_blank" title="GitHub"><img src="./images/git.png" alt="GitHub"></a>
-    </div>
-  </aside>
-
-  <main class="main-content">
-
-    <section class="card">
-      <h2>About Me</h2>
+  <div class="top-row">
+    <aside class="sidebar">
+      <img src="./images/headshot.png" alt="Seonghwan Lim headshot" class="profile-img">
+      <h1>Seonghwan Lim</h1>
       <p>
-        My name is Seonghwan Lim, and I am currently pursuing a <em>Master of Science in Computer Science</em> at the Illinois Institute of Technology.
-        I previously earned a <em>Bachelor of Science in Electrical and Information Engineering</em> from Seoul National University of Science and Technology.
-        My work spans computer vision, embodied sensing, and intelligent systems, with research experience in road-surface recognition, human pose estimation,
-        energy expenditure modeling, microfluidic video analysis, and vision-based interactive systems.
+        M.S. in Computer Science<br>
+        <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a><br>
+        Chicago, IL
       </p>
-    </section>
+      <div class="social-links">
+        <a href="mailto:slim24@hawk.iit.edu" title="Email"><img src="./images/email.png" alt="Email"></a>
+        <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" title="LinkedIn"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/seonghwan97" target="_blank" title="GitHub"><img src="./images/git.png" alt="GitHub"></a>
+      </div>
+    </aside>
 
-    <section class="card">
-      <h2>Research Interests</h2>
-      <p style="margin-bottom: 15px;">
-        My research interests lie in <strong>computer vision</strong>, <strong>multimodal sensing</strong>, and <strong>intelligent interactive systems</strong>.
-        I am particularly interested in building systems that extract meaningful signals from visual and sensor data and use them for prediction, interpretation,
-        and real-time adaptation in complex environments.
+    <section class="card intro-card">
+      <h2>Summary</h2>
+      <p>
+        M.S. in Computer Science candidate at Illinois Institute of Technology with hands-on experience in machine learning, computer vision, and multimodal sensing.
+        Built and evaluated end-to-end ML pipelines for computer vision, multimodal sensing, and real-time intelligent systems.
+        Strong interest in developing reliable and scalable AI systems for real-world perception, prediction, and decision-making.
       </p>
-      <ul>
-        <li>Vision-based modeling for fine-grained and real-world recognition problems, including long-tailed and challenging visual datasets.</li>
-        <li>Human-centered perception systems that estimate pose, movement, energy expenditure, and cognitive or behavioral state from multi-camera or monocular inputs.</li>
-        <li>Real-time embodied and spatially aware systems that connect perception, visualization, and control.</li>
-        <li>Practical machine learning pipelines that combine robust data processing, feature extraction, predictive modeling, and deployment-oriented system design.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Education</h2>
-      <div class="experience-item">
+      <h2 style="margin-top: 28px;">Education</h2>
+      <div class="experience-item" style="margin-bottom: 18px;">
         <div class="date-badge">May 2026</div>
         <div class="content-box">
           <strong>M.S. in Computer Science</strong>
-          Illinois Institute of Technology — GPA 4.0/4.0
+          Illinois Institute of Technology - GPA 4.0/4.0
         </div>
       </div>
-      <div class="experience-item">
+      <div class="experience-item" style="margin-bottom: 0;">
         <div class="date-badge">Aug 2023</div>
         <div class="content-box">
           <strong>B.S. in Electrical and Information Engineering</strong>
@@ -204,66 +260,161 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <main class="main-content">
 
     <section class="card">
-      <h2>Research Experience</h2>
-      
+      <h2>Technical Interests</h2>
+      <ul>
+        <li>Computer vision for fine-grained recognition, visual understanding, and real-world image analysis.</li>
+        <li>Multimodal machine learning for human-centered perception and prediction.</li>
+        <li>End-to-end ML system development, including data processing, model training, evaluation, and deployment.</li>
+        <li>Real-time AI systems for perception, prediction, and interactive decision support.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Professional Experience</h2>
+
       <div class="experience-item">
-        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="date-badge">Jan 2025 -<br>Present</div>
         <div class="content-box">
           <strong>Research Assistant, MMCom Lab, Illinois Institute of Technology</strong>
           <ul>
-            <li>Conducted research on the RSCD road-surface dataset to address long-tailed, fine-grained, and structural classification challenges.</li>
-            <li>Designed and evaluated training strategies including multi-task learning, mixture-of-experts, and diffusion-based sample generation.</li>
-            <li>Improved EfficientNet-B0 classification accuracy from 91.70% to 93.33% through a robust workflow tailored to dataset structure.</li>
+            <li>Analyzed the RSCD dataset to identify long-tail imbalance and fine-grained boundary ambiguity as core bottlenecks, and addressed data scarcity in minority classes through diffusion-based sample generation.</li>
+            <li>Designed and evaluated multiple training strategies including multi-task learning and mixture-of-experts to improve shared representation learning and reduce inter-class confusion in visually ambiguous categories.</li>
+            <li>Systematically validated each approach against the EfficientNet-B0 baseline, achieving a 1.63%p accuracy gain (91.70% → 93.33%) through a workflow tailored to the dataset's structural characteristics.</li>
           </ul>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="date-badge">Jan 2025 -<br>Present</div>
         <div class="content-box">
           <strong>Research Assistant, iConSenSe Lab, Illinois Institute of Technology</strong>
-          <ul>
-            <li>Built a real-time multi-camera perception and CO2 sensing pipeline using Jetson Orin Nanos to estimate spatial behavior and environmental changes indoors.</li>
-            <li>Developed a spatial mapping and heatmap visualization system, contributing to a human-centered HVAC concept linking activity to ventilation control.</li>
-            <li>Researched 3D human pose and energy expenditure estimation from mixed reality data, outperforming E3SFormer using a MotionBERT-based model.</li>
-          </ul>
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/pipeline.png" alt="Pipeline for mixed reality construction safety training analysis" class="is-active" data-label="Pipeline" />
+                <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/mr_experiment.png" alt="Mixed reality construction safety training experiment setup" data-label="MR Experiment" />
+              </div>
+              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
+              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
+              <div class="media-caption">
+                <span data-caption>Pipeline</span>
+                <span data-counter>1 / 2</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong class="subsection-title" style="margin-top: 0;">Mixed Reality Construction Safety Training: Cognitive Ability, Workload, and Performance Analysis</strong>
+              <ul>
+                <li>Statistically analyzed the relationship between cognitive abilities (spatial ability, working memory capacity) and task performance in a mixed reality construction safety training context, using Pearson correlation, OLS regression, and mixed-effects models.</li>
+                <li>Incorporated multimodal workload and physiological signals including energy expenditure, pupil dilation, HRV, EDA, and NASA-TLX as covariates to account for individual differences in cognitive load during analysis.</li>
+                <li>Estimated energy expenditure from experiment session videos by performing 2D human pose detection, lifting poses to 3D via MotionBERT, and predicting energy expenditure through a spatial-temporal transformer trained on the E3V-K5 dataset.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo1.gif" alt="Demo 1 of the worker safety monitoring system" class="is-active" data-label="Demo 1" />
+                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo2.gif" alt="Demo 2 of the worker safety monitoring system" data-label="Demo 2" />
+                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/presentation.jpeg" alt="Presentation slide from BuiltWorlds 2026 Chicago Global Summit" data-label="Presentation" />
+                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/award.png" alt="Award image for the BuiltWorlds 2026 Chicago Global Summit grant" data-label="Award" />
+              </div>
+              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
+              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
+              <div class="media-caption">
+                <span data-caption>Demo 1</span>
+                <span data-counter>1 / 4</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong class="subsection-title" style="margin-top: 0;">Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring</strong>
+              <ul>
+                <li>Developed a multi-camera worker identity matching system and detected human pose using YOLOv11 to support consistent tracking and activity understanding in dynamic construction environments.</li>
+                <li>Estimated energy expenditure from pose sequences as a fatigue-related proxy signal to continuously assess individual worker physical condition over time.</li>
+                <li>Integrated identity tracking and fatigue monitoring outputs to enable worker-level safety supervision across an entire construction site workforce.</li>
+                <li>Presented this work at the <a href="#sensor-free-presentation">BuiltWorlds 2026 Chicago Global Summit</a> and received a <a href="#sensor-free-award">$12,500 research grant</a> in recognition of the project.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="date-badge">Jan 2025 -<br>Present</div>
         <div class="content-box">
-          <strong>Independent Researcher, Bhushan Research Group, Illinois Institute of Technology</strong>
-          <ul>
-            <li>Developed a video analysis workflow to transform noisy microfluidic device imaging data into quantitative signals for predictive modeling.</li>
-            <li>Aligned videos, applied denoising, and extracted pixel-based visual signals as proxies for estimating mixing rates.</li>
-            <li>Trained a Support Vector Regression model to predict inlet settings, achieving an RMSE of 0.0413 µmL/s (Presented at BMES 2025).</li>
-          </ul>
+          <strong>Research Assistant, Bhushan Research Group, Illinois Institute of Technology</strong>
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <iframe src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/poster.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Poster for Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction" class="is-active" data-label="Poster"></iframe>
+                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot1.png" alt="Plot 1 for microfluidic mixing prediction results" data-label="Plot 1" />
+                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot2.png" alt="Plot 2 for microfluidic mixing prediction results" data-label="Plot 2" />
+                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation1.jpg" alt="Presentation image 1 for microfluidic mixing prediction" data-label="Presentation 1" />
+                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation2.jpg" alt="Presentation image 2 for microfluidic mixing prediction" data-label="Presentation 2" />
+              </div>
+              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
+              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
+              <div class="media-caption">
+                <span data-caption>Poster</span>
+                <span data-counter>1 / 5</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong class="subsection-title" style="margin-top: 0;">Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction</strong>
+              <ul>
+                <li>Developed a vision-based mixing index extraction pipeline that processes both CFD simulation contour images and real fluorescence images within a shared registration and normalization framework, enabling consistent mixing quantification across simulation and experiment.</li>
+                <li>Trained and benchmarked multiple surrogate models (SVR, MLP, XGBoost, Random Forest, Linear Regression) for forward MI prediction from inlet conditions, with SVR achieving MAE = 0.0014, RMSE = 0.0023, and R2 = 0.9998 on held-out simulation data.</li>
+                <li>Implemented inverse inlet screening by querying the trained surrogate models for target outlet MI values and verified recovered inlet conditions through direct CFD rerun, with SVR yielding the lowest inverse error (MAE = 0.0587) and validating ordered MI trends on six experimental fluorescence images.</li>
+                <li>Presented this work at the <a href="#microfluidic-presentation">Biomedical Engineering Society (BMES) Annual Meeting 2025</a>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Jan – Jun 2025</div>
+        <div class="date-badge">Jan 2025 -<br>Jun 2025</div>
         <div class="content-box">
-          <strong>Research Assistant, Illinois Institute of Technology</strong>
+          <strong>Research Assistant, MRTD Lab, Illinois Institute of Technology</strong>
           <ul>
-            <li>Performed structural analysis and segmentation labeling on brain MRI scans using ITK-SNAP.</li>
-            <li>Developed linear regression models to predict future cranial implant positions based on segmented MRI data at multiple intervals.</li>
+            <li>Performed structural analysis and 3D segmentation labeling on brain MRI scans using ITK-SNAP, gaining hands-on experience with medical image processing and neuroanatomical structures.</li>
+            <li>Extracted quantitative features from segmented MRI data across multiple time intervals to construct a longitudinal dataset for predictive modeling.</li>
+            <li>Developed linear regression models to predict future cranial implant positions based on the extracted segmentation-derived measurements.</li>
           </ul>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Jan – Dec 2023</div>
+        <div class="date-badge">Jan 2023 -<br>Dec 2023</div>
         <div class="content-box">
           <strong>Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology</strong>
-          <ul>
-            <li>Supported research in incremental learning by comparing KL-based, replay-based, and parameter-based methods.</li>
-            <li>Led a team in the CJ Logistics Challenge, systematically comparing CNN-based (YOLO, Faster R-CNN) and Transformer-based (ViT, DINO) object detectors.</li>
-            <li>Won 1st Prize ($15,000) by evaluating and optimizing augmentation and fine-tuning schemes tailored to domain-specific logistics images.</li>
-          </ul>
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/pipeline.png" alt="Pipeline for parcel inventory recognition" class="is-active" data-label="Pipeline" />
+                <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/award.png" alt="Award image for the CJ Logistics Future Technology Challenge" data-label="Award" />
+              </div>
+              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
+              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
+              <div class="media-caption">
+                <span data-caption>Pipeline</span>
+                <span data-counter>1 / 2</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong class="subsection-title" style="margin-top: 0;">Parcel Inventory Recognition via Two-Stage Object Detection and Classification</strong>
+              <ul>
+                <li>Built a two-stage product recognition pipeline for parcel inventory analysis, combining DINO and YOLOv5 detectors with Weighted Boxes Fusion (WBF) ensemble to improve bounding box quality in the object detection stage.</li>
+                <li>Classified detected and cropped product regions using EfficientNet-B7 with test-time augmentation (TTA) to accurately identify product names and categories from stacked parcel images.</li>
+                <li>Generated structured output containing product name, IoU score, and bounding box coordinates, enabling fine-grained counting and classification of loaded parcels.</li>
+                <li>Received <a href="#cj-logistics-award">1st Prize - 2023 CJ Logistics Future Technology Challenge ($15,000)</a> for this work.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -272,49 +423,117 @@
       <h2>Projects</h2>
 
       <div class="experience-item">
-        <div class="date-badge">Mar 2026</div> <div class="content-box">
-          <strong>Road Damage Analysis <a href="https://github.com/seonghwan97/Road-Damage-Analysis" target="_blank">[github]</a></strong>
-          Built an end-to-end Python pipeline to collect Google Street View imagery using OpenStreetMap geometry, detect pavement damage with a YOLOv8 model, and visualize geospatial results (e.g., marker clustering, heatmaps) on an interactive web map.
-        </div>
-      </div>
-      
-      <div class="experience-item">
-        <div class="date-badge">Apr – Jun 2025</div>
+        <div class="date-badge">2026</div>
         <div class="content-box">
-          <strong>Head-Tracking Semi-VR Environment <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a></strong>
-          Implemented a transformer-based model predicting head yaw, pitch, and roll from MediaPipe keypoints, integrating webcam inference with Unity for VR navigation.
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Road Damage Analysis/demo.gif" alt="Road Damage Analysis demo" class="is-active" data-label="Demo" />
+              </div>
+              <div class="media-caption">
+                <span data-caption>Demo</span>
+                <span data-counter>1 / 1</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong style="margin-top: 0;">Road Damage Analysis <a href="https://github.com/seonghwan97/Road-Damage-Analysis" target="_blank">[github]</a></strong>
+              <ul>
+                <li>Developed an end-to-end Python pipeline using OpenStreetMap geometry to automate the collection of Google Street View imagery.</li>
+                <li>Implemented a YOLOv8 model to detect various types of pavement damage for real-time infrastructure monitoring.</li>
+                <li>Visualized geospatial analysis results through marker clustering and heatmaps on an interactive web-based map.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Feb – Jun 2025</div>
+        <div class="date-badge">2025</div>
+        <div class="content-box">
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Head-Tracking Semi-VR Environment/demo.gif" alt="Head-Tracking Semi-VR Environment demo" class="is-active" data-label="Demo" />
+              </div>
+              <div class="media-caption">
+                <span data-caption>Demo</span>
+                <span data-counter>1 / 1</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong style="margin-top: 0;">Head-Tracking Semi-VR Environment <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a></strong>
+              <ul>
+                <li>Implemented a transformer-based model that predicts head yaw, pitch, and roll orientation from MediaPipe keypoints.</li>
+                <li>Integrated real-time webcam inference with the Unity engine to create a responsive semi-VR navigation experience.</li>
+                <li>Enabled intuitive viewpoint control within virtual environments by tracking user movements without the need for specialized hardware.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="date-badge">2025</div>
         <div class="content-box">
           <strong>AI-Generated Text Detection Program</strong>
-          Built a text detection pipeline distinguishing AI-generated from human-written text using logistic regression, linear regression, and Naïve Bayes.
+          <ul>
+            <li>Built a specialized text detection pipeline to accurately distinguish between AI-generated content and human-written text.</li>
+            <li>Evaluated classification performance using multiple machine learning algorithms including logistic regression, linear regression, and Naive Bayes.</li>
+            <li>Analyzed statistical linguistic patterns to determine the probabilistic authenticity of input text data.</li>
+          </ul>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Oct – Nov 2024</div>
+        <div class="date-badge">2024</div>
         <div class="content-box">
           <strong>NICE with Knowledge Distillation</strong>
-          Reproduced the NICE method for class-incremental learning, improving performance on CIFAR-10 (39% to 49%) and MNIST (44% to 59%) via knowledge distillation.
+          <ul>
+            <li>Reproduced the NICE framework for class-incremental learning to manage the training of models on sequential data streams.</li>
+            <li>Utilized knowledge distillation techniques to mitigate catastrophic forgetting and optimize the retention of previous knowledge.</li>
+            <li>Achieved significant performance improvements on CIFAR-10 (39% to 49%) and MNIST (44% to 59%) datasets.</li>
+          </ul>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Jan – Dec 2022</div>
+        <div class="date-badge">2022</div>
         <div class="content-box">
-          <strong>Marionette Servo-Motor Control System <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a></strong>
-          Designed a marionette control system translating RGB-D human poses captured by Kinect into servo motor control for real-time motion imitation.
+          <div class="research-media-layout">
+            <div class="media-carousel" data-carousel>
+              <div class="media-frame">
+                <img src="./assets/Marionette Servo-Motor Control System/pipeline.png" alt="Marionette control system pipeline" class="is-active" data-label="Pipeline" />
+                <img src="./assets/Marionette Servo-Motor Control System/figure1.png" alt="Marionette servo-motor control system figure" data-label="Figure 1" />
+              </div>
+              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
+              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
+              <div class="media-caption">
+                <span data-caption>Pipeline</span>
+                <span data-counter>1 / 2</span>
+              </div>
+            </div>
+            <div class="research-text">
+              <strong style="margin-top: 0;">Marionette Servo-Motor Control System <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a></strong>
+              <ul>
+                <li>Captured real-time 3D human pose information from RGB-D imagery using a Kinect sensor system.</li>
+                <li>Designed a mapping interface to translate captured human joint movements into precise servo motor control signals.</li>
+                <li>Developed a complete hardware control system for real-time motion imitation that drives a physical marionette puppet.</li>
+                <li>Presented this work at the <a href="#marionette-presentation">2022 ICROS-KROS Honam Jeju Academic Conference</a>.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="experience-item">
-        <div class="date-badge">Personal Project</div>
+        <div class="date-badge">2025</div>
         <div class="content-box">
           <strong>Gemini API + RSS + Zotero Literature Automation</strong>
-          Built a workflow collecting new papers via RSS feeds, summarizing them with the Gemini API, and storing outputs in Zotero for structured tracking.
+          <ul>
+            <li>Constructed an automated workflow that monitors RSS feeds to gather new research papers based on specific academic interests.</li>
+            <li>Leveraged the Gemini API to extract key insights and generate concise summaries of complex research literature.</li>
+            <li>Integrated structured output storage with Zotero to enhance the efficiency of literature tracking and research management.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -322,64 +541,101 @@
     <section class="card">
       <h2>Publications &amp; Presentations</h2>
       <ul>
-        <li>Kim, J., &amp; Lim, S. (2026). <em>“Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions.”</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
-        <li>
-          Lim, S., &amp; Bhushan, A. (2025). <em>“Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.”</em>
+        <li id="sensor-free-presentation">Lim, S. (2026). <em>"Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring."</em> Presented at <em>BuiltWorlds 2026 Chicago Global Summit: Guiding the Future of the AEC Industry Through Innovation, Technology and Investment</em>.</li>
+        <li>Kim, J., &amp; Lim, S. (2026). <em>"Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions."</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
+        <li id="microfluidic-presentation">
+          Lim, S., &amp; Bhushan, A. (2025). <em>"Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction."</em>
           Biomedical Engineering Society (BMES) Annual Meeting 2025.
-          <a href="/assets/bmes2025/poster.pdf" target="_blank">[poster]</a>
-          <a href="/assets/bmes2025/photo1.jpg" target="_blank">[photo_1]</a>
-          <a href="/assets/bmes2025/photo2.jpg" target="_blank">[photo_2]</a>
         </li>
-        <li>Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>“Development of Marionette Motion Control System.”</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
+        <li id="marionette-presentation">Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>"Development of Marionette Motion Control System."</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
       </ul>
     </section>
 
     <section class="card">
       <h2>Technical Skills</h2>
       <ul>
-        <li><strong>Languages:</strong> Python, SQL, Java, C/C++, Bash</li>
-        <li><strong>Machine Learning:</strong> PyTorch, scikit-learn, deep learning, machine learning</li>
-        <li><strong>Computer Vision:</strong> OpenCV, YOLO, object detection, image classification, Vision Transformers</li>
-        <li><strong>Tools:</strong> Linux, Git, experiment tracking, pipeline automation</li>
-        <li><strong>Data / Analytics:</strong> data visualization, matplotlib, Excel</li>
-        <li><strong>Additional:</strong> LLM applications, real-time inference, NVIDIA Jetson Orin Nano, Raspberry Pi</li>
+        <li><strong>Languages</strong><br>Python (PyTorch, NumPy, Pandas), SQL, C/C++, Java, Bash</li>
+        <li><strong>Machine Learning</strong><br>Deep Learning (CNN, ViT, Diffusion), Class-Incremental Learning, Knowledge Distillation, MoE, scikit-learn</li>
+        <li><strong>Computer Vision</strong><br>Object Detection &amp; Segmentation (YOLO v5/v8/v11, DINO), 3D Human Pose Estimation (MotionBERT), MediaPipe, OpenCV</li>
+        <li><strong>Data &amp; MLOps</strong><br>ETL Pipelines (Geospatial data), Experiment Tracking (W&amp;B), Model Benchmarking, Data Augmentation (Diffusion-based)</li>
+        <li><strong>Deployment &amp; Tools</strong><br>Linux, Git, Docker, Real-time Inference, NVIDIA Jetson Orin Nano, Raspberry Pi</li>
+        <li><strong>Research &amp; Stats</strong><br>Statistical Modeling (OLS, Mixed-effects), Multimodal Signal Processing, Data Visualization (Matplotlib, Seaborn)</li>
       </ul>
     </section>
 
     <section class="card">
       <h2>Teaching Experience</h2>
       <div class="experience-item">
-        <div class="date-badge">Jan 2025 – Present</div>
+        <div class="date-badge">Jan 2025 -<br>Present</div>
         <div class="content-box">
-          <strong>Teaching Assistant, College of Computing, Illinois Institute of Technology</strong><br>
-          Supported courses including Introduction to Advanced Studies I & II, and Algorithms. Led lab sessions covering Java, C, MIPS assembly, and data structures.
+          <strong>Teaching Assistant, College of Computing, Illinois Institute of Technology</strong>
+          Supported courses including Introduction to Advanced Studies I &amp; II, and Algorithms. Led lab sessions covering Java, C, MIPS assembly, and data structures.
         </div>
       </div>
       <div class="experience-item">
-        <div class="date-badge">Jun – Aug 2023</div>
+        <div class="date-badge">Jun 2023 -<br>Aug 2023</div>
         <div class="content-box">
-          <strong>Workshop Instructor, Object Detection with YOLOv5, Seoul Tech</strong><br>
+          <strong>Workshop Instructor, Object Detection with YOLOv5, Seoul Tech</strong>
           Conducted practical lab sessions introducing undergraduate students to deep learning-based object detection with YOLOv5.
         </div>
       </div>
 
       <h2 style="margin-top: 30px;">Honors &amp; Awards</h2>
       <div class="experience-item" style="margin-bottom: 10px;">
+        <div class="date-badge">2026</div>
+        <div class="content-box" id="sensor-free-award">Research Grant Recipient - BuiltWorlds 2026 Chicago Global Summit ($12,500)</div>
+      </div>
+      <div class="experience-item" style="margin-bottom: 10px;">
         <div class="date-badge">2025</div>
-        <div class="content-box">Marshal Honor – Illinois Institute of Technology Commencement</div>
+        <div class="content-box">Marshal Honor - Illinois Institute of Technology Commencement</div>
       </div>
       <div class="experience-item" style="margin-bottom: 10px;">
         <div class="date-badge">2024</div>
-        <div class="content-box">Graduate Pathways Scholarship – Illinois Institute of Technology</div>
+        <div class="content-box">Graduate Pathways Scholarship - Illinois Institute of Technology</div>
       </div>
       <div class="experience-item" style="margin-bottom: 10px;">
         <div class="date-badge">2023</div>
-        <div class="content-box">1st Prize – 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
+        <div class="content-box" id="cj-logistics-award">1st Prize - 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
       </div>
     </section>
 
   </main>
 </div>
+
+<script>
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll(".media-frame > [data-label]"));
+    const caption = carousel.querySelector("[data-caption]");
+    const counter = carousel.querySelector("[data-counter]");
+    const prev = carousel.querySelector(".media-nav.prev");
+    const next = carousel.querySelector(".media-nav.next");
+    let activeIndex = 0;
+
+    const render = () => {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("is-active", index === activeIndex);
+      });
+      caption.textContent = slides[activeIndex].dataset.label || "";
+      counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+    };
+
+    if (prev) {
+      prev.addEventListener("click", () => {
+        activeIndex = (activeIndex - 1 + slides.length) % slides.length;
+        render();
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", () => {
+        activeIndex = (activeIndex + 1) % slides.length;
+        render();
+      });
+    }
+
+    render();
+  });
+</script>
 
 </body>
 </html>
