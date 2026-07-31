@@ -3,639 +3,841 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seonghwan Lim - Portfolio</title>
+  <title>Seonghwan Lim, Computer Vision and Machine Vision Engineer</title>
+  <meta name="description" content="Computer vision and machine vision engineer, M.S. Computer Science, Illinois Tech. Object detection, tracking, pose estimation, and image processing for industrial inspection, quality control, logistics, and safety. Chicago, open to full-time roles." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-color: #f4f7f6;
-      --card-bg: #ffffff;
-      --text-main: #334155;
-      --text-muted: #64748b;
-      --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
-      --border-color: #e2e8f0;
+      --ink: #17191d;
+      --body: #41474e;
+      --muted: #737b83;
+      --line: #e2e5e9;
+      --line-strong: #c9ced4;
+      --bg: #ffffff;
+      --bg-alt: #f7f8f9;
+      --accent: #1f4fd8;
+      --width: 1020px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.7;
-      padding: 20px;
+      min-width: 320px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--body);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
-    a:hover { color: var(--primary-hover); text-decoration: underline; }
-    h1, h2, h3 { color: #0f172a; margin-bottom: 15px; }
-    ul { margin-left: 20px; margin-bottom: 15px; padding-left: 0; }
-    li { margin-bottom: 8px; }
 
-    .container {
-      max-width: 1440px;
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    img { display: block; max-width: 100%; }
+    strong { color: var(--ink); font-weight: 600; }
+
+    h1, h2, h3 { color: var(--ink); font-weight: 600; line-height: 1.2; }
+
+    .wrap {
+      max-width: var(--width);
       margin: 0 auto;
-    }
-    .top-row {
-      display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 24px;
-      align-items: stretch;
-      margin-bottom: 24px;
+      padding: 0 24px;
     }
 
-    .sidebar {
-      width: 240px;
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    section { scroll-margin-top: 68px; }
+
+    /* ---------- header ---------- */
+    .site-header {
       position: sticky;
-      top: 20px;
-      text-align: center;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
-    .profile-img {
-      width: 100%;
-      max-width: 168px;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
-    .sidebar h1 { font-size: 1.8rem; margin-bottom: 5px; }
-    .sidebar p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
-    .social-links {
+    .header-inner {
+      height: 60px;
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .social-links img {
-      width: 35px;
-      transition: transform 0.2s ease;
-    }
-    .social-links a:hover img { transform: scale(1.1); }
-
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      min-width: 0;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    .intro-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .card h2 {
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .experience-item {
-      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
-      margin-bottom: 30px;
     }
-    .experience-item:last-child { margin-bottom: 0; }
-    .date-badge {
-      flex: 0 0 130px;
-      font-size: 0.9rem;
+    .header-name {
+      font-size: 0.95rem;
       font-weight: 600;
-      color: var(--text-muted);
-      padding-top: 2px;
+      color: var(--ink);
+      white-space: nowrap;
     }
-    .content-box strong {
-      color: #0f172a;
-      display: block;
-      font-size: 1.05rem;
-      margin-bottom: 5px;
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.86rem;
+      font-weight: 500;
     }
-    .subsection-title {
-      display: block;
-      margin-top: 10px;
+    .site-nav a { color: var(--body); }
+    .site-nav a:hover { color: var(--accent); }
+    .nav-mail {
+      font-variant-numeric: tabular-nums;
+      color: var(--ink) !important;
+      font-weight: 600;
+      border-bottom: 1px solid var(--line-strong);
+      padding-bottom: 1px;
+    }
+    .nav-mail:hover { color: var(--accent) !important; border-color: var(--accent); }
+
+    /* ---------- hero ---------- */
+    .hero { padding: 64px 0 40px; }
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+    .avatar {
+      flex: none;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 22%;
+      border: 1px solid var(--line);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
       margin-bottom: 8px;
     }
-    .research-media-layout {
-      display: grid;
-      grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
-      gap: 24px;
-      align-items: start;
-      margin-top: 10px;
+    .hero-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 18px;
     }
-    .media-carousel {
-      position: relative;
-      background: #000000;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
+    .hero-summary {
+      max-width: 660px;
+      margin-bottom: 24px;
+    }
+    .hero-lead { color: var(--ink); }
+    .hero-open {
+      margin-top: 14px;
+      font-size: 0.94rem;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .contact-row a { color: var(--ink); border-bottom: 1px solid var(--line-strong); }
+    .contact-row a:hover { color: var(--accent); border-color: var(--accent); }
+    .contact-row .mail { font-weight: 600; }
+
+    /* ---------- snapshot ---------- */
+    .snapshot {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-alt);
+      padding: 26px 0;
+    }
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .snapshot-item .label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .snapshot-item .value {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .snapshot-item .value span { display: block; color: var(--muted); font-weight: 400; }
+
+    /* ---------- section shell ---------- */
+    .block { padding: 56px 0; border-bottom: 1px solid var(--line); }
+    .block:last-of-type { border-bottom: 0; }
+    .block > .wrap > h2 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--ink);
+    }
+    .section-note {
+      margin: -12px 0 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .block-sub {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 12px;
+      margin: 48px 0 28px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    /* ---------- entries ---------- */
+    .entry {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 28px;
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+    }
+    .entry:first-of-type { border-top: 0; padding-top: 0; }
+    .entry-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding-top: 3px;
+      font-variant-numeric: tabular-nums;
+    }
+    .entry-body { min-width: 0; }
+    .entry-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .entry-org {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .entry-body ul { padding-left: 18px; }
+    .entry-body li { margin-bottom: 6px; font-size: 0.92rem; }
+    .entry-body li:last-child { margin-bottom: 0; }
+    .entry-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .project + .project {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .project-head {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .project-head .repo {
+      margin-left: 8px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+    .with-media {
+      display: grid;
+      grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ---------- media ---------- */
+    .media {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 4px;
       overflow: hidden;
+      background: #111315;
     }
     .media-frame {
-      aspect-ratio: 4 / 3;
-      width: 100%;
-      background: #000000;
       position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
     }
     .media-frame > * {
-      width: 100%;
-      height: 100%;
-      border: 0;
       display: none;
-      background: #000000;
-    }
-    .media-frame img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      border: 0;
     }
-    .media-frame > *.is-active {
-      display: block;
-    }
+    .media-frame > *.is-active { display: block; }
     .media-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 36px;
-      height: 36px;
-      border: none;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.75);
-      color: #ffffff;
-      font-size: 1.1rem;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.85rem;
       cursor: pointer;
     }
-    .media-nav:hover {
-      background: rgba(15, 23, 42, 0.9);
-    }
-    .media-nav.prev {
-      left: 12px;
-    }
-    .media-nav.next {
-      right: 12px;
-    }
+    .media-nav:hover { background: rgba(255, 255, 255, 0.34); }
+    .media-nav.prev { left: 8px; }
+    .media-nav.next { right: 8px; }
     .media-caption {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      padding: 10px 14px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      background: #ffffff;
-      border-top: 1px solid var(--border-color);
-    }
-    .research-text ul {
-      margin-bottom: 0;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 10px;
+      background: #111315;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.72rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
     }
 
-    @media (max-width: 850px) {
-      .top-row { grid-template-columns: 1fr; }
-      .sidebar { position: static; width: 100%; margin-bottom: 20px; }
-      .experience-item { flex-direction: column; gap: 5px; }
-      .date-badge { flex: auto; color: var(--primary-color); }
-      .research-media-layout { grid-template-columns: 1fr; }
+    /* ---------- lists ---------- */
+    .pub-list { list-style: none; }
+    .pub-list li {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+    .pub-list li:first-child { border-top: 0; padding-top: 0; }
+    .pub-list em { font-style: normal; color: var(--ink); }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 12px 28px;
+      font-size: 0.92rem;
+    }
+    .skill-grid dt {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.86rem;
+      padding-top: 1px;
+    }
+    .skill-grid dd { margin: 0; }
+
+    .award {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 28px;
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+    .award:first-of-type { border-top: 0; }
+    .award .entry-date { padding-top: 0; }
+
+    /* ---------- footer ---------- */
+    .site-footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      background: var(--bg-alt);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px 24px;
+      font-size: 0.86rem;
+    }
+    .footer-inner a { color: var(--ink); border-bottom: 1px solid var(--line-strong); }
+    .footer-inner a:hover { color: var(--accent); border-color: var(--accent); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 900px) {
+      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+      .with-media { grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: 22px; }
+    }
+
+    @media (max-width: 700px) {
+      .site-nav a:not(.nav-mail) { display: none; }
+      .nav-mail { font-size: 0.8rem; }
+      .hero { padding: 40px 0 32px; }
+      .hero-inner { flex-direction: column; gap: 20px; }
+      .avatar { width: 88px; height: 88px; }
+      .hero h1 { font-size: 2rem; }
+      .block { padding: 44px 0; }
+      .entry, .award, .skill-grid { grid-template-columns: 1fr; gap: 8px; }
+      .entry { padding: 22px 0; }
+      .entry-date { padding-top: 0; }
+      .with-media { grid-template-columns: 1fr; }
+      .media { max-width: 380px; }
+    }
+
+    @media (max-width: 430px) {
+      .snapshot-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.75rem; }
+      .contact-row { gap: 8px 16px; font-size: 0.85rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="top-row">
-    <aside class="sidebar">
-      <img src="./images/headshot.png" alt="Seonghwan Lim headshot" class="profile-img">
-      <h1>Seonghwan Lim</h1>
-      <p>
-        M.S. in Computer Science<br>
-        <a href="https://www.iit.edu/" target="_blank">Illinois Institute of Technology</a><br>
-        Chicago, IL
-      </p>
-      <div class="social-links">
-        <a href="mailto:slim24@hawk.iit.edu" title="Email"><img src="./images/email.png" alt="Email"></a>
-        <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" title="LinkedIn"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-        <a href="https://github.com/seonghwan97" target="_blank" title="GitHub"><img src="./images/git.png" alt="GitHub"></a>
-      </div>
-    </aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="header-name" href="#top">Seonghwan Lim</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-mail" href="mailto:qube20101219@gmail.com">qube20101219@gmail.com</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card intro-card">
-      <h2>Summary</h2>
-      <p>
-        M.S. in Computer Science candidate at Illinois Institute of Technology with hands-on experience in machine learning, computer vision, and multimodal sensing.
-        Built and evaluated end-to-end ML pipelines for computer vision, multimodal sensing, and real-time intelligent systems.
-        Strong interest in developing reliable and scalable AI systems for real-world perception, prediction, and decision-making.
-      </p>
-      <h2 style="margin-top: 28px;">Education</h2>
-      <div class="experience-item" style="margin-bottom: 18px;">
-        <div class="date-badge">May 2026</div>
-        <div class="content-box">
-          <strong>M.S. in Computer Science</strong>
-          Illinois Institute of Technology - GPA 3.9/4.0
-        </div>
-      </div>
-      <div class="experience-item" style="margin-bottom: 0;">
-        <div class="date-badge">Aug 2023</div>
-        <div class="content-box">
-          <strong>B.S. in Electrical and Information Engineering</strong>
-          Seoul National University of Science and Technology
-        </div>
-      </div>
-    </section>
-  </div>
+  <main>
 
-  <main class="main-content">
-
-    <section class="card">
-      <h2>Technical Interests</h2>
-      <ul>
-        <li>Computer vision for fine-grained recognition, visual understanding, and real-world image analysis.</li>
-        <li>Multimodal machine learning for human-centered perception and prediction.</li>
-        <li>End-to-end ML system development, including data processing, model training, evaluation, and deployment.</li>
-        <li>Real-time AI systems for perception, prediction, and interactive decision support.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Professional Experience</h2>
-
-      <div class="experience-item">
-        <div class="date-badge">Jan 2025 -<br>Present</div>
-        <div class="content-box">
-          <strong>Research Assistant, MMCom Lab, Illinois Institute of Technology</strong>
-          <ul>
-            <li>Analyzed the RSCD dataset to identify long-tail imbalance and fine-grained boundary ambiguity as core bottlenecks, and addressed data scarcity in minority classes through diffusion-based sample generation.</li>
-            <li>Designed and evaluated multiple training strategies including multi-task learning and mixture-of-experts to improve shared representation learning and reduce inter-class confusion in visually ambiguous categories.</li>
-            <li>Systematically validated each approach against the EfficientNet-B0 baseline, achieving a 1.63%p accuracy gain (91.70% → 93.33%) through a workflow tailored to the dataset's structural characteristics.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">Jan 2025 -<br>Present</div>
-        <div class="content-box">
-          <strong>Research Assistant, iConSenSe Lab, Illinois Institute of Technology</strong>
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/pipeline.png" alt="Pipeline for mixed reality construction safety training analysis" class="is-active" data-label="Pipeline" />
-                <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/mr_experiment.png" alt="Mixed reality construction safety training experiment setup" data-label="MR Experiment" />
-              </div>
-              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
-              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
-              <div class="media-caption">
-                <span data-caption>Pipeline</span>
-                <span data-counter>1 / 2</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong class="subsection-title" style="margin-top: 0;">Mixed Reality Construction Safety Training: Cognitive Ability, Workload, and Performance Analysis</strong>
-              <ul>
-                <li>Statistically analyzed the relationship between cognitive abilities (spatial ability, working memory capacity) and task performance in a mixed reality construction safety training context, using Pearson correlation, OLS regression, and mixed-effects models.</li>
-                <li>Incorporated multimodal workload and physiological signals including energy expenditure, pupil dilation, HRV, EDA, and NASA-TLX as covariates to account for individual differences in cognitive load during analysis.</li>
-                <li>Estimated energy expenditure from experiment session videos by performing 2D human pose detection, lifting poses to 3D via MotionBERT, and predicting energy expenditure through a spatial-temporal transformer trained on the E3V-K5 dataset.</li>
-              </ul>
-            </div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <img class="avatar" src="./images/headshot.png" alt="Seonghwan Lim" width="112" height="112">
+        <div>
+          <h1>Seonghwan Lim</h1>
+          <p class="hero-role">Computer Vision Engineer</p>
+          <div class="hero-summary">
+            <p class="hero-lead">I build computer vision systems end to end, from dataset design and labeling through model training, evaluation, and real-time inference on GPU. My experience spans machine vision for industrial inspection, logistics, safety monitoring, and scientific imaging, with an emphasis on validating what a model reports against an independent measurement.</p>
+            <p class="hero-open">I am open to new opportunities and always glad to connect. Coffee chats and introductions are welcome.</p>
           </div>
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo1.gif" alt="Demo 1 of the worker safety monitoring system" class="is-active" data-label="Demo 1" />
-                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo2.gif" alt="Demo 2 of the worker safety monitoring system" data-label="Demo 2" />
-                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/presentation.jpeg" alt="Presentation slide from BuiltWorlds 2026 Chicago Global Summit" data-label="Presentation" />
-                <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/award.png" alt="Award image for the BuiltWorlds 2026 Chicago Global Summit grant" data-label="Award" />
-              </div>
-              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
-              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
-              <div class="media-caption">
-                <span data-caption>Demo 1</span>
-                <span data-counter>1 / 4</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong class="subsection-title" style="margin-top: 0;">Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring</strong>
-              <ul>
-                <li>Developed a multi-camera worker identity matching system and detected human pose using YOLOv11 to support consistent tracking and activity understanding in dynamic construction environments.</li>
-                <li>Estimated energy expenditure from pose sequences as a fatigue-related proxy signal to continuously assess individual worker physical condition over time.</li>
-                <li>Integrated identity tracking and fatigue monitoring outputs to enable worker-level safety supervision across an entire construction site workforce.</li>
-                <li>Presented this work at the <a href="#sensor-free-presentation">BuiltWorlds 2026 Chicago Global Summit</a> and received a <a href="#sensor-free-award">$12,500 research grant</a> in recognition of the project.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">Jan 2025 -<br>Present</div>
-        <div class="content-box">
-          <strong>Research Assistant, Bhushan Research Group, Illinois Institute of Technology</strong>
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <iframe src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/poster.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Poster for Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction" class="is-active" data-label="Poster"></iframe>
-                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot1.png" alt="Plot 1 for microfluidic mixing prediction results" data-label="Plot 1" />
-                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot2.png" alt="Plot 2 for microfluidic mixing prediction results" data-label="Plot 2" />
-                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation1.jpg" alt="Presentation image 1 for microfluidic mixing prediction" data-label="Presentation 1" />
-                <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation2.jpg" alt="Presentation image 2 for microfluidic mixing prediction" data-label="Presentation 2" />
-              </div>
-              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
-              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
-              <div class="media-caption">
-                <span data-caption>Poster</span>
-                <span data-counter>1 / 5</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong class="subsection-title" style="margin-top: 0;">Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction</strong>
-              <ul>
-                <li>Developed a vision-based mixing index extraction pipeline that processes both CFD simulation contour images and real fluorescence images within a shared registration and normalization framework, enabling consistent mixing quantification across simulation and experiment.</li>
-                <li>Trained and benchmarked multiple surrogate models (SVR, MLP, XGBoost, Random Forest, Linear Regression) for forward MI prediction from inlet conditions, with SVR achieving MAE = 0.0014, RMSE = 0.0023, and R2 = 0.9998 on held-out simulation data.</li>
-                <li>Implemented inverse inlet screening by querying the trained surrogate models for target outlet MI values and verified recovered inlet conditions through direct CFD rerun, with SVR yielding the lowest inverse error (MAE = 0.0587) and validating ordered MI trends on six experimental fluorescence images.</li>
-                <li>Presented this work at the <a href="#microfluidic-presentation">Biomedical Engineering Society (BMES) Annual Meeting 2025</a>.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">Jan 2025 -<br>Jun 2025</div>
-        <div class="content-box">
-          <strong>Research Assistant, MRTD Lab, Illinois Institute of Technology</strong>
-          <ul>
-            <li>Performed structural analysis and 3D segmentation labeling on brain MRI scans using ITK-SNAP, gaining hands-on experience with medical image processing and neuroanatomical structures.</li>
-            <li>Extracted quantitative features from segmented MRI data across multiple time intervals to construct a longitudinal dataset for predictive modeling.</li>
-            <li>Developed linear regression models to predict future cranial implant positions based on the extracted segmentation-derived measurements.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">Jan 2023 -<br>Dec 2023</div>
-        <div class="content-box">
-          <strong>Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology</strong>
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/pipeline.png" alt="Pipeline for parcel inventory recognition" class="is-active" data-label="Pipeline" />
-                <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/award.png" alt="Award image for the CJ Logistics Future Technology Challenge" data-label="Award" />
-              </div>
-              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
-              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
-              <div class="media-caption">
-                <span data-caption>Pipeline</span>
-                <span data-counter>1 / 2</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong class="subsection-title" style="margin-top: 0;">Parcel Inventory Recognition via Two-Stage Object Detection and Classification</strong>
-              <ul>
-                <li>Built a two-stage product recognition pipeline for parcel inventory analysis, combining DINO and YOLOv5 detectors with Weighted Boxes Fusion (WBF) ensemble to improve bounding box quality in the object detection stage.</li>
-                <li>Classified detected and cropped product regions using EfficientNet-B7 with test-time augmentation (TTA) to accurately identify product names and categories from stacked parcel images.</li>
-                <li>Generated structured output containing product name, IoU score, and bounding box coordinates, enabling fine-grained counting and classification of loaded parcels.</li>
-                <li>Received <a href="#cj-logistics-award">1st Prize - 2023 CJ Logistics Future Technology Challenge ($15,000)</a> for this work.</li>
-              </ul>
-            </div>
+          <div class="contact-row">
+            <a class="mail" href="mailto:qube20101219@gmail.com">qube20101219@gmail.com</a>
+            <a href="./resume/SeonghwanLim_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+            <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/seonghwan97" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Projects</h2>
-
-      <div class="experience-item">
-        <div class="date-badge">2026</div>
-        <div class="content-box">
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Road Damage Analysis/demo.gif" alt="Road Damage Analysis demo" class="is-active" data-label="Demo" />
-              </div>
-              <div class="media-caption">
-                <span data-caption>Demo</span>
-                <span data-counter>1 / 1</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong style="margin-top: 0;">Road Damage Analysis <a href="https://github.com/seonghwan97/Road-Damage-Analysis" target="_blank">[github]</a></strong>
-              <ul>
-                <li>Developed an end-to-end Python pipeline using OpenStreetMap geometry to automate the collection of Google Street View imagery.</li>
-                <li>Implemented a YOLOv8 model to detect various types of pavement damage for real-time infrastructure monitoring.</li>
-                <li>Visualized geospatial analysis results through marker clustering and heatmaps on an interactive web-based map.</li>
-              </ul>
-            </div>
-          </div>
+    <!-- ===== SNAPSHOT ===== -->
+    <section class="snapshot" aria-label="Summary">
+      <div class="wrap snapshot-grid">
+        <div class="snapshot-item">
+          <span class="label">Education</span>
+          <div class="value">M.S. Computer Science, May 2026<span>Illinois Institute of Technology &middot; GPA 3.9 / 4.0</span></div>
         </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">2025</div>
-        <div class="content-box">
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Head-Tracking Semi-VR Environment/demo.gif" alt="Head-Tracking Semi-VR Environment demo" class="is-active" data-label="Demo" />
-              </div>
-              <div class="media-caption">
-                <span data-caption>Demo</span>
-                <span data-counter>1 / 1</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong style="margin-top: 0;">Head-Tracking Semi-VR Environment <a href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank">[github]</a></strong>
-              <ul>
-                <li>Implemented a transformer-based model that predicts head yaw, pitch, and roll orientation from MediaPipe keypoints.</li>
-                <li>Integrated real-time webcam inference with the Unity engine to create a responsive semi-VR navigation experience.</li>
-                <li>Enabled intuitive viewpoint control within virtual environments by tracking user movements without the need for specialized hardware.</li>
-              </ul>
-            </div>
-          </div>
+        <div class="snapshot-item">
+          <span class="label">Capabilities</span>
+          <div class="value">Object detection, classification, tracking, pose estimation<span>CNNs and Vision Transformers, Python, PyTorch, OpenCV, real-time video inference</span></div>
         </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">2025</div>
-        <div class="content-box">
-          <strong>AI-Generated Text Detection Program</strong>
-          <ul>
-            <li>Built a specialized text detection pipeline to accurately distinguish between AI-generated content and human-written text.</li>
-            <li>Evaluated classification performance using multiple machine learning algorithms including logistic regression, linear regression, and Naive Bayes.</li>
-            <li>Analyzed statistical linguistic patterns to determine the probabilistic authenticity of input text data.</li>
-          </ul>
+        <div class="snapshot-item">
+          <span class="label">Domains</span>
+          <div class="value">Inspection, logistics, safety<span>Defect detection, parcel recognition, worker monitoring, image metrology</span></div>
         </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">2024</div>
-        <div class="content-box">
-          <strong>NICE with Knowledge Distillation</strong>
-          <ul>
-            <li>Reproduced the NICE framework for class-incremental learning to manage the training of models on sequential data streams.</li>
-            <li>Utilized knowledge distillation techniques to mitigate catastrophic forgetting and optimize the retention of previous knowledge.</li>
-            <li>Achieved significant performance improvements on CIFAR-10 (39% to 49%) and MNIST (44% to 59%) datasets.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">2022</div>
-        <div class="content-box">
-          <div class="research-media-layout">
-            <div class="media-carousel" data-carousel>
-              <div class="media-frame">
-                <img src="./assets/Marionette Servo-Motor Control System/pipeline.png" alt="Marionette control system pipeline" class="is-active" data-label="Pipeline" />
-                <img src="./assets/Marionette Servo-Motor Control System/figure1.png" alt="Marionette servo-motor control system figure" data-label="Figure 1" />
-              </div>
-              <button type="button" class="media-nav prev" aria-label="Show previous media">&lt;</button>
-              <button type="button" class="media-nav next" aria-label="Show next media">&gt;</button>
-              <div class="media-caption">
-                <span data-caption>Pipeline</span>
-                <span data-counter>1 / 2</span>
-              </div>
-            </div>
-            <div class="research-text">
-              <strong style="margin-top: 0;">Marionette Servo-Motor Control System <a href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank">[github]</a></strong>
-              <ul>
-                <li>Captured real-time 3D human pose information from RGB-D imagery using a Kinect sensor system.</li>
-                <li>Designed a mapping interface to translate captured human joint movements into precise servo motor control signals.</li>
-                <li>Developed a complete hardware control system for real-time motion imitation that drives a physical marionette puppet.</li>
-                <li>Presented this work at the <a href="#marionette-presentation">2022 ICROS-KROS Honam Jeju Academic Conference</a>.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="date-badge">2025</div>
-        <div class="content-box">
-          <strong>Gemini API + RSS + Zotero Literature Automation</strong>
-          <ul>
-            <li>Constructed an automated workflow that monitors RSS feeds to gather new research papers based on specific academic interests.</li>
-            <li>Leveraged the Gemini API to extract key insights and generate concise summaries of complex research literature.</li>
-            <li>Integrated structured output storage with Zotero to enhance the efficiency of literature tracking and research management.</li>
-          </ul>
+        <div class="snapshot-item">
+          <span class="label">Availability</span>
+          <div class="value">Chicago, IL. Open to relocation<span>Work authorized in the US on STEM OPT. Available to start immediately</span></div>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Publications &amp; Presentations</h2>
-      <ul>
-        <li id="sensor-free-presentation">Lim, S. (2026). <em>"Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring."</em> Presented at <em>BuiltWorlds 2026 Chicago Global Summit: Guiding the Future of the AEC Industry Through Innovation, Technology and Investment</em>.</li>
-        <li>Kim, J., &amp; Lim, S. (2026). <em>"Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions."</em> Submitted for review to the International Conference on Urban Affairs (ICUA).</li>
-        <li id="microfluidic-presentation">
-          Lim, S., &amp; Bhushan, A. (2025). <em>"Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction."</em>
-          Biomedical Engineering Society (BMES) Annual Meeting 2025.
-        </li>
-        <li id="marionette-presentation">Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>"Development of Marionette Motion Control System."</em> The 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
-      </ul>
+    <!-- ===== FOCUS ===== -->
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="block" id="experience">
+      <div class="wrap">
+        <h2>Experience</h2>
+        <p class="section-note">Part-time research roles held concurrently alongside graduate coursework, not four full-time positions.</p>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2025 &ndash;<br>Present</div>
+          <div class="entry-body">
+            <div class="entry-title">Research Assistant</div>
+            <div class="entry-org">iConSenSe Lab, Illinois Institute of Technology</div>
+
+            <div class="project">
+              <div class="with-media">
+                <div class="media" data-carousel>
+                  <div class="media-frame">
+                    <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo1.gif" alt="Dashboard showing camera-only worker exposure monitoring" class="is-active" data-label="Dashboard 1" loading="lazy" />
+                    <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/demo2.gif" alt="Second view of the worker monitoring dashboard" data-label="Dashboard 2" loading="lazy" />
+                    <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/presentation.jpeg" alt="Presenting at BuiltWorlds 2026 Chicago Global Summit" data-label="BuiltWorlds 2026" loading="lazy" />
+                    <img src="./assets/Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring/award.png" alt="BuiltWorlds 2026 research grant award" data-label="Grant award" loading="lazy" />
+                  </div>
+                  <button type="button" class="media-nav prev" aria-label="Previous image">&lsaquo;</button>
+                  <button type="button" class="media-nav next" aria-label="Next image">&rsaquo;</button>
+                  <div class="media-caption">
+                    <span data-caption>Dashboard 1</span>
+                    <span data-counter>1 / 4</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="project-head">Camera-Only Worker Monitoring with Pose-Derived Workload and Ergonomic Risk</div>
+                  <ul>
+                    <li>Built a camera-only worker monitoring system that runs on ordinary site video with no wearables. A YOLO pose model extracts keypoints, ByteTrack holds each worker's identity across frames, and downstream heads roll activity, work state, and posture into a 10-second exposure score, so a safety lead reads one number per crew instead of watching four feeds. Holds a median 23 fps tracking 3 to 9 workers on an RTX 2060.</li>
+                    <li>Checked each module against an independent reference across 42 subjects, reaching 0.861 activity accuracy, 0.775 work-state F1, and 0.793 correlation with a 3D-pose ergonomic reference. Workload only reached 0.526 against calorimetry, so I shipped it as an exposure indicator rather than a fatigue measurement.</li>
+                    <li>Also built the CO2 sensing rig on Raspberry Pi and Jetson for the field cross-check. Presented at the <a href="#award-builtworlds">BuiltWorlds 2026 Chicago Global Summit</a> with a $12,500 research grant. Manuscript in preparation, so the code is not public yet.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="with-media">
+                <div class="media" data-carousel>
+                  <div class="media-frame">
+                    <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/pipeline.png" alt="Analysis pipeline for the mixed-reality safety study" class="is-active" data-label="Pipeline" loading="lazy" />
+                    <img src="./assets/Mixed Reality Construction Safety Training; Cognitive Ability, Workload, and Performance Analysis/mr_experiment.png" alt="HoloLens 2 hazard identification experiment setup" data-label="MR setup" loading="lazy" />
+                  </div>
+                  <button type="button" class="media-nav prev" aria-label="Previous image">&lsaquo;</button>
+                  <button type="button" class="media-nav next" aria-label="Next image">&rsaquo;</button>
+                  <div class="media-caption">
+                    <span data-caption>Pipeline</span>
+                    <span data-counter>1 / 2</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="project-head">Movement Features from Monocular Video in a Mixed-Reality Safety Task</div>
+                  <ul>
+                    <li>Turned single-camera session video into movement and energy-expenditure features through 2D pose estimation, MotionBERT 3D lifting, and spatiotemporal feature extraction. No depth camera or motion capture rig.</li>
+                    <li>Ran it across 61 HoloLens 2 sessions and lined the output up against how well each person actually did the task.</li>
+                    <li>The features did not predict performance. I reported that plainly instead of tuning until something looked significant.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2025 &ndash;<br>Jul 2026</div>
+          <div class="entry-body">
+            <div class="entry-title">Research Assistant</div>
+            <div class="entry-org">MMCom Lab, Illinois Institute of Technology</div>
+            <div class="project-head">Fine-Grained Road Surface Classifier</div>
+            <ul>
+              <li>Trained a classifier to tell apart 27 road-surface types on RSCD, roughly 960k training images against a 50k test split. Most errors traced back to two causes, a long-tailed class distribution and surface types that look nearly identical in a single frame.</li>
+              <li>Fixed the data before touching the model, filling out rare classes with diffusion-generated images, then tried multi-task and mixture-of-experts heads to separate the look-alike classes.</li>
+              <li>Pushed EfficientNet-B0 from 91.70% to 93.33% over a standard-augmentation baseline, on a single run rather than a seed average.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2025 &ndash;<br>May 2026</div>
+          <div class="entry-body">
+            <div class="entry-title">Research Assistant</div>
+            <div class="entry-org">Bhushan Research Group, Illinois Institute of Technology</div>
+            <div class="with-media">
+              <div class="media" data-carousel>
+                <div class="media-frame">
+                  <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/poster-preview.png" alt="Conference poster on machine-learning control of microfluidic mixing" class="is-active" data-label="Poster" loading="lazy" />
+                  <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot1.png" alt="Surrogate model prediction results, plot 1" data-label="Results 1" loading="lazy" />
+                  <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/plot2.png" alt="Surrogate model prediction results, plot 2" data-label="Results 2" loading="lazy" />
+                  <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation1.jpg" alt="Presenting the microfluidic mixing work at BMES 2025" data-label="BMES 2025" loading="lazy" />
+                  <img src="./assets/Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction/presentation2.jpg" alt="Second photo from the BMES 2025 presentation" data-label="BMES 2025" loading="lazy" />
+                </div>
+                <button type="button" class="media-nav prev" aria-label="Previous image">&lsaquo;</button>
+                <button type="button" class="media-nav next" aria-label="Next image">&rsaquo;</button>
+                <div class="media-caption">
+                  <span data-caption>Poster</span>
+                  <span data-counter>1 / 5</span>
+                </div>
+              </div>
+              <div>
+                <div class="project-head">Real-Time Control of Microfluidic Mixing from Image Measurements</div>
+                <ul>
+                  <li>Wrote the measurement code that registers and normalizes CFD contour images and experimental fluorescence images, then computes a 0 to 1 mixing index from pixel intensity along the outlet.</li>
+                  <li>Benchmarked SVR, MLP, XGBoost, Random Forest, and linear regression as surrogates for the CFD solver. SVR won on held-out simulation data with MAE 0.0014 and R&sup2; 0.9998, putting error near a tenth of a percent of the index range, close enough to stand in for a full CFD solve during parameter search.</li>
+                  <li>Ran inverse screening to find inlet conditions that hit a target outlet mixing value, then confirmed the picks with fresh CFD runs and six fluorescence experiments, so the chosen settings were checked against both simulation and the bench. Presented at the <a href="#pub-bmes">BMES Annual Meeting 2025</a>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2025 &ndash;<br>Jun 2025</div>
+          <div class="entry-body">
+            <div class="entry-title">Research Assistant</div>
+            <div class="entry-org">MRTD Lab, Illinois Institute of Technology</div>
+            <div class="project-head">Cranial Implant Position Prediction from Longitudinal MRI</div>
+            <ul>
+              <li>Segmented 3D anatomical structures from longitudinal brain MRI in ITK-SNAP and quality-checked every label set before it entered the dataset, since the regression downstream inherits any labeling error.</li>
+              <li>Converted the segmented volumes into geometric measurements and assembled them into a longitudinal dataset that tracks how each structure moves between scans.</li>
+              <li>Fit regression models that predict future cranial implant position from those measurements, giving surgical planning an estimate before the next scan is taken.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2023 &ndash;<br>Dec 2023</div>
+          <div class="entry-body">
+            <div class="entry-title">Undergraduate Researcher</div>
+            <div class="entry-org">VCL Lab, Seoul National University of Science and Technology</div>
+            <div class="with-media">
+              <div class="media" data-carousel>
+                <div class="media-frame">
+                  <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/pipeline.png" alt="Two-stage parcel recognition pipeline diagram" class="is-active" data-label="Pipeline" loading="lazy" />
+                  <img src="./assets/Parcel Inventory Recognition via Two-Stage Object Detection and Classification/award.png" alt="CJ Logistics Future Technology Challenge first prize" data-label="1st Prize" loading="lazy" />
+                </div>
+                <button type="button" class="media-nav prev" aria-label="Previous image">&lsaquo;</button>
+                <button type="button" class="media-nav next" aria-label="Next image">&rsaquo;</button>
+                <div class="media-caption">
+                  <span data-caption>Pipeline</span>
+                  <span data-counter>1 / 2</span>
+                </div>
+              </div>
+              <div>
+                <div class="project-head">Two-Stage Detection and Classification for Stacked Parcels</div>
+                <ul>
+                  <li>Two-stage recognition on photos of stacked parcels. DINO and YOLO detect product regions and Weighted Boxes Fusion merges them into cleaner boxes than either produced alone, then EfficientNet-B7 with test-time augmentation classifies each crop into a product name and category.</li>
+                  <li>Output is one structured record per product, holding name, IoU, and box coordinates, which the counting step reads directly.</li>
+                  <li>Placed <a href="#award-cj">1st of 19 teams ($15,000)</a>, identifying 56.6% of the 53 evaluation products against 49.1% for the runner-up, at 0.80 mean IoU. No other team paired the top recognition rate with localization above 0.75 IoU.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages</strong><br>Python (PyTorch, NumPy, Pandas), SQL, C/C++, Java, Bash</li>
-        <li><strong>Machine Learning</strong><br>Deep Learning (CNN, ViT, Diffusion), Class-Incremental Learning, Knowledge Distillation, MoE, scikit-learn</li>
-        <li><strong>Computer Vision</strong><br>Object Detection &amp; Segmentation (YOLO v5/v8/v11, DINO), 3D Human Pose Estimation (MotionBERT), MediaPipe, OpenCV</li>
-        <li><strong>Data &amp; MLOps</strong><br>ETL Pipelines (Geospatial data), Experiment Tracking (W&amp;B), Model Benchmarking, Data Augmentation (Diffusion-based)</li>
-        <li><strong>Deployment &amp; Tools</strong><br>Linux, Git, Docker, Real-time Inference, NVIDIA Jetson Orin Nano, Raspberry Pi</li>
-        <li><strong>Research &amp; Stats</strong><br>Statistical Modeling (OLS, Mixed-effects), Multimodal Signal Processing, Data Visualization (Matplotlib, Seaborn)</li>
-      </ul>
+    <!-- ===== PROJECTS ===== -->
+    <section class="block" id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+
+        <div class="entry">
+          <div class="entry-date">2026</div>
+          <div class="entry-body">
+            <div class="with-media">
+              <div class="media" data-carousel>
+                <div class="media-frame">
+                  <img src="./assets/Road Damage Analysis/demo.gif" alt="Road damage analysis map demo" class="is-active" data-label="Demo" loading="lazy" />
+                </div>
+                <div class="media-caption">
+                  <span data-caption>Demo</span>
+                  <span data-counter>1 / 1</span>
+                </div>
+              </div>
+              <div>
+                <div class="project-head">Road Damage Analysis<a class="repo" href="https://github.com/seonghwan97/Road-Damage-Analysis" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+                <ul>
+                  <li>Wrote a pipeline that pulls road geometry from OpenStreetMap and downloads the matching Google Street View frames along each segment, so a survey needs no field vehicle.</li>
+                  <li>Trained a YOLO detector to locate and classify pavement damage in every georeferenced frame.</li>
+                  <li>Rendered the output as an interactive map with marker clustering and a damage-density heatmap, so an inspector can rank streets by how much attention they need.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">2025</div>
+          <div class="entry-body">
+            <div class="with-media">
+              <div class="media" data-carousel>
+                <div class="media-frame">
+                  <img src="./assets/Head-Tracking Semi-VR Environment/demo.gif" alt="Head-tracking semi-VR demo" class="is-active" data-label="Demo" loading="lazy" />
+                </div>
+                <div class="media-caption">
+                  <span data-caption>Demo</span>
+                  <span data-counter>1 / 1</span>
+                </div>
+              </div>
+              <div>
+                <div class="project-head">Head-Tracking Semi-VR<a class="repo" href="https://github.com/seonghwan97/Face-Tracking-Semi-Immersive-VR" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+                <ul>
+                  <li>Trained a transformer to estimate head yaw, pitch, and roll from MediaPipe face keypoints.</li>
+                  <li>Streamed webcam inference into Unity to drive the camera viewpoint, giving head-tracked parallax on a laptop with no headset or tracking hardware.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">2022</div>
+          <div class="entry-body">
+            <div class="with-media">
+              <div class="media" data-carousel>
+                <div class="media-frame">
+                  <img src="./assets/Marionette Servo-Motor Control System/pipeline.png" alt="Marionette motion control pipeline" class="is-active" data-label="Pipeline" loading="lazy" />
+                  <img src="./assets/Marionette Servo-Motor Control System/figure1.png" alt="Marionette servo-motor hardware" data-label="Hardware" loading="lazy" />
+                </div>
+                <button type="button" class="media-nav prev" aria-label="Previous image">&lsaquo;</button>
+                <button type="button" class="media-nav next" aria-label="Next image">&rsaquo;</button>
+                <div class="media-caption">
+                  <span data-caption>Pipeline</span>
+                  <span data-counter>1 / 2</span>
+                </div>
+              </div>
+              <div>
+                <div class="project-head">Marionette Motion Control<a class="repo" href="https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System" target="_blank" rel="noopener noreferrer">Writeup</a></div>
+                <ul>
+                  <li>Captured 3D joint positions from Kinect RGB-D depth imagery at frame rate.</li>
+                  <li>Wrote the C++ control layer that converts joint angles into servo commands on the embedded controller, clamping each servo to the range the puppet can physically reach so a bad pose estimate cannot damage the rig.</li>
+                  <li>The finished rig mirrors an operator's motion live. Presented at the <a href="#pub-icros">2022 ICROS-KROS Honam Jeju Academic Conference</a>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Teaching Experience</h2>
-      <div class="experience-item">
-        <div class="date-badge">Jan 2025 -<br>Present</div>
-        <div class="content-box">
-          <strong>Teaching Assistant, College of Computing, Illinois Institute of Technology</strong>
-          Supported courses including Introduction to Advanced Studies I &amp; II, and Algorithms. Led lab sessions covering Java, C, MIPS assembly, and data structures.
-        </div>
-      </div>
-      <div class="experience-item">
-        <div class="date-badge">Jun 2023 -<br>Aug 2023</div>
-        <div class="content-box">
-          <strong>Workshop Instructor, Object Detection with YOLOv5, Seoul Tech</strong>
-          Conducted practical lab sessions introducing undergraduate students to deep learning-based object detection with YOLOv5.
-        </div>
-      </div>
+    <!-- ===== SKILLS ===== -->
+    <section class="block" id="skills">
+      <div class="wrap">
+        <h2>Technical skills</h2>
+        <dl class="skill-grid">
+          <dt>Languages</dt>
+          <dd>Python, C / C++, SQL, Bash</dd>
 
-      <h2 style="margin-top: 30px;">Honors &amp; Awards</h2>
-      <div class="experience-item" style="margin-bottom: 10px;">
-        <div class="date-badge">2026</div>
-        <div class="content-box" id="sensor-free-award">Research Grant Recipient - BuiltWorlds 2026 Chicago Global Summit ($12,500)</div>
+          <dt>Vision</dt>
+          <dd>PyTorch, OpenCV, image processing, object detection, image classification, multi-object tracking, 2D and 3D pose estimation, RGB-D depth imagery, YOLO, DINO, EfficientNet, MediaPipe, MotionBERT, ByteTrack</dd>
+
+          <dt>Modeling</dt>
+          <dd>CNNs, Vision Transformers, multi-task learning, mixture-of-experts, diffusion-based augmentation, scikit-learn, XGBoost</dd>
+
+          <dt>Data &amp; eval</dt>
+          <dd>NumPy, Pandas, dataset design, labeling and quality control, held-out benchmarking, validation against reference instruments, Weights &amp; Biases</dd>
+
+          <dt>Deployment</dt>
+          <dd>Linux, Git, Docker, real-time video inference on CUDA GPUs</dd>
+
+          <dt>Hardware</dt>
+          <dd>Camera capture rigs with remote control on NVIDIA Jetson, sensor data acquisition on Raspberry Pi, Senseair K30 FR CO2 sensors, Kinect RGB-D capture, servo control over embedded microcontrollers in C++</dd>
+        </dl>
       </div>
-      <div class="experience-item" style="margin-bottom: 10px;">
-        <div class="date-badge">2025</div>
-        <div class="content-box">Marshal Honor - Illinois Institute of Technology Commencement</div>
+    </section>
+
+    <!-- ===== AWARDS & TEACHING ===== -->
+    <section class="block" id="awards">
+      <div class="wrap">
+        <h2>Awards</h2>
+        <div class="award" id="award-builtworlds">
+          <div class="entry-date">2026</div>
+          <div>Research grant, BuiltWorlds 2026 Chicago Global Summit ($12,500)</div>
+        </div>
+        <div class="award" id="award-cj">
+          <div class="entry-date">2023</div>
+          <div>1st Prize, 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
+        </div>
+
+        <h3 class="block-sub">Teaching</h3>
+        <div class="entry">
+          <div class="entry-date">Jun 2023 &ndash;<br>Aug 2023</div>
+          <div class="entry-body">
+            <div class="entry-title">Workshop Instructor, Object Detection</div>
+            <div class="entry-org">Seoul National University of Science and Technology</div>
+            <ul>
+              <li>Ran hands-on sessions taking undergraduates from labeling a dataset to training a YOLO detector and reading its evaluation metrics.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="experience-item" style="margin-bottom: 10px;">
-        <div class="date-badge">2024</div>
-        <div class="content-box">Graduate Pathways Scholarship - Illinois Institute of Technology</div>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section class="block" id="publications">
+      <div class="wrap">
+        <h2>Publications &amp; presentations</h2>
+        <ul class="pub-list">
+          <li id="pub-builtworlds">Lim, S. (2026). <em>Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring.</em> BuiltWorlds 2026 Chicago Global Summit.</li>
+          <li>Kim, J., &amp; Lim, S. (2026). <em>Reading the Language of Redlining: Natural Language Processing Analysis of HOLC Area Descriptions.</em> Under review, International Conference on Urban Affairs.</li>
+          <li id="pub-bmes">Lim, S., &amp; Bhushan, A. (2025). <em>Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction.</em> Biomedical Engineering Society Annual Meeting 2025.</li>
+          <li id="pub-icros">Lim, S., Kim, D., Yoo, H., &amp; Yi, S. (2022). <em>Development of Marionette Motion Control System.</em> 2022 ICROS-KROS Honam Jeju Academic Conference.</li>
+        </ul>
       </div>
-      <div class="experience-item" style="margin-bottom: 10px;">
-        <div class="date-badge">2023</div>
-        <div class="content-box" id="cj-logistics-award">1st Prize - 2023 CJ Logistics Future Technology Challenge ($15,000)</div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="block" id="education">
+      <div class="wrap">
+        <h2>Education</h2>
+        <div class="entry">
+          <div class="entry-date">May 2026</div>
+          <div class="entry-body">
+            <div class="entry-title">M.S. Computer Science</div>
+            <div class="entry-org">Illinois Institute of Technology &middot; GPA 3.9 / 4.0</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date">Aug 2023</div>
+          <div class="entry-body">
+            <div class="entry-title">B.S. Electrical and Information Engineering</div>
+            <div class="entry-org">Seoul National University of Science and Technology</div>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
-</div>
 
-<script>
-  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
-    const slides = Array.from(carousel.querySelectorAll(".media-frame > [data-label]"));
-    const caption = carousel.querySelector("[data-caption]");
-    const counter = carousel.querySelector("[data-counter]");
-    const prev = carousel.querySelector(".media-nav.prev");
-    const next = carousel.querySelector(".media-nav.next");
-    let activeIndex = 0;
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>Seonghwan Lim, Computer Vision Engineer</div>
+      <div class="footer-links">
+        <a href="mailto:qube20101219@gmail.com">qube20101219@gmail.com</a>
+        <a href="./resume/SeonghwanLim_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+        <a href="https://www.linkedin.com/in/slim-97-kr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/seonghwan97" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
-    const render = () => {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle("is-active", index === activeIndex);
-      });
-      caption.textContent = slides[activeIndex].dataset.label || "";
-      counter.textContent = `${activeIndex + 1} / ${slides.length}`;
-    };
+  <script>
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll(".media-frame > [data-label]"));
+      const caption = carousel.querySelector("[data-caption]");
+      const counter = carousel.querySelector("[data-counter]");
+      const prev = carousel.querySelector(".media-nav.prev");
+      const next = carousel.querySelector(".media-nav.next");
+      let index = 0;
 
-    if (prev) {
-      prev.addEventListener("click", () => {
-        activeIndex = (activeIndex - 1 + slides.length) % slides.length;
+      const render = () => {
+        slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+        caption.textContent = slides[index].dataset.label || "";
+        counter.textContent = `${index + 1} / ${slides.length}`;
+      };
+
+      prev?.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
         render();
       });
-    }
-
-    if (next) {
-      next.addEventListener("click", () => {
-        activeIndex = (activeIndex + 1) % slides.length;
+      next?.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
         render();
       });
-    }
 
-    render();
-  });
-</script>
+      render();
+    });
+  </script>
 
 </body>
 </html>

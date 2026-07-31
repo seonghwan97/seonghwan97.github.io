@@ -1,0 +1,160 @@
+%==============================================================
+%  Seonghwan Lim - Resume
+%  Compile:  pdflatex SeonghwanLim_Resume.tex
+%==============================================================
+\documentclass[letterpaper,10pt]{extarticle}
+
+\usepackage[left=0.45in,right=0.45in,top=0.34in,bottom=0.34in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ink}{HTML}{1A1C20}
+\definecolor{rule}{HTML}{1A1C20}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{0.93}\selectfont
+\color{ink}
+
+% ---------- section headings ----------
+\titleformat{\section}
+  {\normalfont\bfseries\footnotesize}
+  {}{0em}{\MakeUppercase}[\titlerule]
+\titlespacing*{\section}{0pt}{4.5pt}{2pt}
+
+% ---------- bullets ----------
+\setlist[itemize]{
+  leftmargin=11pt, topsep=1pt, itemsep=0.8pt, parsep=0pt,
+  label=\textbullet
+}
+
+% ---------- role heading: system (left) / dates (right), then affiliation ----------
+\newcommand{\role}[3]{%
+  \textbf{#1}\hfill #3\par
+  {\small\itshape #2}\par\vspace{0.5pt}
+}
+
+\begin{document}
+
+%==============================================================
+% HEADER
+%==============================================================
+\begin{center}
+  {\LARGE\bfseries Seonghwan Lim}\\[2pt]
+  {\small Computer Vision Engineer}\\[3pt]
+  {\footnotesize
+    Chicago, IL \textbullet\ +1 (312) 287-3570 \textbullet\
+    \href{mailto:qube20101219@gmail.com}{qube20101219@gmail.com} \textbullet\
+    US work authorized (STEM OPT)\\
+    \href{https://www.linkedin.com/in/slim-97-kr}{linkedin.com/in/slim-97-kr} \textbullet\
+    \href{https://github.com/seonghwan97}{github.com/seonghwan97} \textbullet\
+    \href{https://seonghwan97.github.io}{seonghwan97.github.io}
+  }
+\end{center}
+
+%==============================================================
+% SUMMARY
+%==============================================================
+\section{Summary}
+Computer vision engineer with an M.S. in Computer Science. I build detection, tracking, pose
+estimation, and image-measurement systems end to end, from dataset design and labeling through
+training, benchmarking against independent references, and real-time inference.
+
+%==============================================================
+% EDUCATION
+%==============================================================
+\section{Education}
+\textbf{Illinois Institute of Technology} --- M.S. Computer Science, GPA 3.9/4.0 \hfill May 2026\\
+\textbf{Seoul Nat'l University of Science and Technology} --- B.S. Electrical and Information Eng.,
+GPA 3.6/4.0 \hfill Aug 2023
+
+%==============================================================
+% TECHNICAL SKILLS
+%==============================================================
+\section{Technical Skills}
+\textbf{Languages:} Python, C/C++, SQL, Bash\\
+\textbf{Computer Vision:} Object detection, classification, multi-object tracking, 2D/3D pose estimation, image processing, OpenCV, YOLO\\
+\textbf{Machine Learning:} PyTorch, CNNs, Vision Transformers, multi-task learning, data augmentation, scikit-learn, XGBoost\\
+\textbf{Data and Tools:} Dataset design, labeling QC, NumPy, Pandas, Git, Linux, Docker, CUDA real-time inference, embedded systems
+
+%==============================================================
+% EXPERIENCE
+%==============================================================
+\section{Experience}
+
+\role{Camera-Only Worker Safety Monitoring}{Research Assistant, iConSenSe Lab, Illinois Institute of Technology}{Jan 2025 -- Present}
+\begin{itemize}
+  \item Built a camera-only worker monitoring system on ordinary site video, no wearables. A YOLO
+        pose model extracts keypoints, ByteTrack holds worker identity across frames, and downstream
+        heads roll activity, work state, and posture into a 10-second exposure score at a median
+        23 fps for 3 to 9 workers on an RTX 2060.
+  \item Checked every module against an independent reference across 42 subjects, reaching 0.861
+        activity accuracy, 0.775 work-state F1, and 0.793 correlation with a 3D-pose ergonomic
+        reference. Scoped workload as an exposure indicator rather than a fatigue measurement after
+        it reached only 0.526 against indirect calorimetry.
+  \item Built the CO\textsubscript{2} sensing rig on Raspberry Pi for the field cross-check, and
+        separately lifted 2D poses to 3D with MotionBERT across 61 HoloLens 2 sessions. Presented at
+        the BuiltWorlds Global Summit and received a \$12,500 research grant.
+\end{itemize}
+
+\role{Fine-Grained Road Surface Classifier}{Research Assistant, MMCom Lab, Illinois Institute of Technology}{Jan 2025 -- Jul 2026}
+\begin{itemize}
+  \item Trained a classifier over 27 road-surface types on RSCD, roughly 960k training images
+        against a 50k test split. Traced most errors to a long-tailed class distribution and to
+        surface types that look nearly identical in a single frame.
+  \item Fixed the data before the model, filling out rare classes with diffusion-generated images,
+        then tried multi-task and mixture-of-experts heads to separate the look-alike classes.
+  \item Pushed EfficientNet-B0 from 91.70\% to 93.33\% over a standard-augmentation baseline.
+\end{itemize}
+
+\role{Image-Based Process Control for Microfluidic Mixing}{Research Assistant, Bhushan Research Group, Illinois Institute of Technology}{Jan 2025 -- May 2026}
+\begin{itemize}
+  \item Wrote the measurement code that registers and normalizes CFD contour and experimental
+        fluorescence images, then computes a 0 to 1 mixing index from outlet pixel intensity.
+  \item Benchmarked SVR, MLP, XGBoost, Random Forest, and linear regression as CFD surrogates. SVR
+        won on held-out data with MAE 0.0014 and R\textsuperscript{2} 0.9998, close enough to stand
+        in for a full CFD solve during inverse screening for inlet conditions that hit a target
+        mixing value, which I then confirmed with fresh CFD runs and six fluorescence experiments.
+\end{itemize}
+
+\role{Two-Stage Parcel Inventory Recognition}{Undergraduate Researcher, VCL Lab, Seoul National University of Science and Technology}{Jan 2023 -- Dec 2023}
+\begin{itemize}
+  \item Built two-stage recognition for photos of stacked parcels. DINO and YOLO detect product
+        regions and Weighted Boxes Fusion merges them into cleaner boxes than either alone, then
+        EfficientNet-B7 with test-time augmentation classifies each crop.
+  \item Placed 1st of 19 teams, identifying 56.6\% of the 53 evaluation products against 49.1\% for
+        the runner-up, at 0.80 mean IoU, the only team to pair the top recognition rate with
+        localization above 0.75 IoU.
+\end{itemize}
+
+%==============================================================
+% PROJECTS
+%==============================================================
+\section{Selected Projects}
+\textbf{Road Damage Analysis} (\href{https://github.com/seonghwan97/Road-Damage-Analysis}{github})
+--- Pipeline that pulls road geometry from OpenStreetMap, downloads the matching Street View frames,
+detects pavement damage with YOLO, and renders an interactive map with clustering and a heatmap for
+inspection triage.\\[1pt]
+\textbf{Marionette Motion Control}
+(\href{https://github.com/seonghwan97/Development-of-Marionette-Motion-Control-System}{writeup})
+--- Kinect RGB-D 3D joint capture driving a C++ servo control layer on an embedded controller, each
+servo clamped to the puppet's reachable range so a bad pose estimate cannot damage the rig.
+
+%==============================================================
+% AWARDS
+%==============================================================
+\section{Awards and Presentations}
+\textbf{Research Grant}, BuiltWorlds Global Summit (\$12,500) \hfill 2026\\
+\textbf{1st Prize}, CJ Logistics Future Technology Challenge (\$15,000) \hfill 2023\\[2pt]
+\textit{Sensor-Free Wearable System for Activity and Fatigue Detection in Worker Safety Monitoring},
+BuiltWorlds Global Summit \hfill 2026\\
+\textit{Real-Time Control of Microfluidic Mixing via Machine Learning-Driven Prediction},
+BMES Annual Meeting \hfill 2025\\
+\textit{Development of Marionette Motion Control System}, ICROS-KROS Conference \hfill 2022
+
+\end{document}
