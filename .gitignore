@@ -1,0 +1,12 @@
+# Job application materials - keep out of this public repo
+fit/
+SeonghwanLim_Resume_Champaign.pdf
+SeonghwanLim_Resume_Champaign.tex
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
